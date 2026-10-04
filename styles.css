@@ -1,0 +1,1060 @@
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif; /* Set the font family */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    line-height: 1.4; /* Set line height for readability */
+    color: #333; /* Set the text color */
+    position: relative; /* Set relative positioning */
+    font-size: 12px; /* Base font size */
+    background-color: rgba(100, 149, 237, 1); /* Set background color */
+    background-repeat: no-repeat; /* Prevent background image repetition */
+    background-size: cover; /* Cover the entire background area */
+    background-position: center; /* Center the background image */
+    transition: background-color 0.5s ease-out; /* Smooth background color transition */
+}
+
+/* Overlay for tint effect */
+.overlay {
+    position: fixed; /* Fix position relative to viewport */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    pointer-events: none; /* Allow interactions with underlying content */
+    z-index: -1; /* Place behind other content */
+    transition: opacity 0.8s ease-out; /* Smooth opacity transition */
+}
+
+/* Basic styles for the navigation */
+nav {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+    background-color: #333; /* Dark background color */
+    padding: 10px 20px; /* Padding inside the nav bar */
+    position: relative; /* Relative positioning */
+    z-index: 10; /* Ensure nav stays on top */
+}
+
+/* Flexbox layout for navigation links */
+nav .nav-links {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the links */
+    font-size: 1.3em; /* Increase font size */
+    flex-grow: 1; /* Allow links to grow */
+}
+
+/* Individual list items in navigation */
+nav .nav-links li {
+    margin-left: 20px; /* Space between items */
+    position: relative; /* For dropdown positioning */
+}
+
+/* Styling for navigation links */
+nav .nav-links li a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Padding inside links */
+    display: inline-block; /* Block-level link */
+    transition: background-color 0.2s ease; /* Smooth background transition */
+}
+
+/* Hover effect for navigation links */
+nav .nav-links li a:hover {
+    background-color: #444; /* Darker background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Specific interaction for the "Future Plans" button with pulse effect */
+nav .future-plans {
+    position: relative; /* Positioning for pulse effect */
+    overflow: hidden; /* Hide overflow for pulse */
+    z-index: 2; /* Ensure pulse effect is visible */
+}
+
+/* Pulse effect for "Future Plans" button */
+nav .future-plans:hover::after {
+    content: ''; /* Create pulse element */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%; /* Large pulse size */
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2); /* Light background color */
+    border-radius: 50%; /* Make the pulse circular */
+    transform: translate(-50%, -50%); /* Center the pulse */
+    animation: pulse 1.7s ease-out; /* Pulse animation */
+}
+.logo img {
+    width: 250px; /* Adjust the size of the logo */
+    height: 80px;
+}
+.logo-img:hover{
+    transform: scale(1.4);
+}
+
+/* Keyframes for pulse animation */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.1); /* Start small */
+        background: rgba(155, 255, 105, 1); /* Greenish color */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* Full size */
+        opacity: 1; /* Full opacity */
+    }
+}
+
+/* Dropdown menu for "My Works" */
+.dropdown {
+    position: relative; /* Positioning for dropdown */
+    z-index: 15; /* Ensure dropdown stays on top */
+}
+
+/* Button styling for dropdown */
+.dropdown .dropbtn {
+    background-color: #333; /* Match nav background */
+    border: none; /* Remove border */
+}
+
+/* Hover effect for dropdown button */
+.dropdown:hover .dropbtn {
+    background-color: #555; /* Darker background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Dropdown content styling */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position relative to button */
+    background-color: burlywood; /* Light brown background */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0px 8px 16px 0px rgba(90, 250, 120, 0.4); /* Drop shadow */
+    z-index: 20; /* Ensure content stays on top */
+}
+
+/* Link styling inside dropdown */
+.dropdown-content a {
+    color: black; /* Black text color */
+    padding: 12px 16px; /* Padding inside links */
+    text-decoration: inherit; /* Inherit text decoration */
+    display: block; /* Block-level link */
+}
+
+/* Hover effect for dropdown links */
+.dropdown-content a:hover {
+    background-color: #777; /* Darker background on hover */
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block; /* Display dropdown content */
+    z-index: 20; /* Ensure it stays above other content */
+}
+
+/* Interactive button for "Contact" with underline effect */
+nav .nav-links li:last-child a {
+    position: relative; /* Positioning for underline effect */
+}
+
+/* Underline effect for "Contact" button */
+nav .nav-links li:last-child a::after {
+    content: ''; /* Create underline */
+    position: absolute;
+    width: 0%; /* Start with no underline */
+    height: 2px; /* Thin underline */
+    bottom: -5px; /* Position below text */
+    left: 0;
+    background-color: greenyellow; /* Greenish-yellow color */
+    transition: width 1s ease; /* Smooth transition */
+}
+
+/* Expand underline on hover */
+nav .nav-links li:last-child a:hover::after {
+    width: 100%; /* Full width underline on hover */
+}
+
+/* Mobile menu toggle button */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Stack lines vertically */
+    justify-content: space-between; /* Space lines evenly */
+    width: 30px; /* Width of the toggle */
+    height: 21px; /* Height of the toggle */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Styling for each line in the toggle */
+.menu-toggle span {
+    display: block; /* Block-level element */
+    width: 100%; /* Full width */
+    height: 3px; /* Height of each line */
+    background: white; /* White line color */
+}
+
+/* Text Slideshow Container */
+.text-slideshow {
+    width: 100%; /* Full width */
+    background-color: #a77c48; /* Light brown background color */
+    padding: 30px 0; /* Padding inside the slideshow */
+    text-align: center; /* Center align text */
+    color: black; /* Black text color */
+    font-size: 24px; /* Font size */
+    font-weight: bold; /* Bold text */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Positioning for animation */
+    box-sizing: border-box; /* Include padding in width/height */
+    margin-bottom: 50px; /* Space below slideshow */
+}
+
+/* Slide Styling */
+.slide {
+    display: none; /* Hidden by default */
+    padding: 10px 20px; /* Padding inside slides */
+    white-space: nowrap; /* Prevent text wrapping */
+    text-align: center; /* Center align text */
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in animation */
+}
+
+/* Fade-in effect for slides */
+@keyframes fadeIn {
+    from { opacity: 0; } /* Start invisible */
+    to { opacity: 1; } /* Fade to visible */
+}
+
+/* Profile section styling */
+.profile-section {
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center content vertically */
+    padding: 40px; /* Padding inside section */
+    margin-top: 50px; /* Space above section */
+}
+
+/* Profile container styling */
+.profile-container {
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Center items vertically */
+    max-width: 1200px; /* Max width */
+    width: 100%; /* Full width */
+    background-color: rgba(255,255,255,0.5); /* Transparent white background */
+    height: 500px; /* Fixed height */
+}
+
+/* Profile image container styling */
+.profile-image {
+    width: 400px; /* Fixed width */
+    height: 400px; /* Fixed height */
+    perspective: 1000px; /* 3D perspective for rotation */
+    margin-right: 20px; /* Space to the right */
+    margin-left: 50px; /* Space to the left */
+    border-radius: 50%; /* Circular shape */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Positioning for flipping */
+}
+
+/* Front and back images for flipping effect */
+.profile-image .image-front,
+.profile-image .image-back {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    position: absolute; /* Position over each other */
+    backface-visibility: hidden; /* Hide back face when flipped */
+    transition: transform 0.6s; /* Smooth flip transition */
+    border-radius: 50%; /* Circular images */
+    object-fit: cover; /* Cover the container */
+    object-position: center; /* Center the image */
+}
+
+/* Image styling */
+.profile-image img {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the container */
+    object-position: center; /* Center the image */
+}
+
+/* Initial state for front image */
+.profile-image .image-front {
+    transform: rotateY(0deg); /* Face forward */
+}
+
+/* Initial state for back image */
+.profile-image .image-back {
+    transform: rotateY(180deg); /* Face backward */
+}
+
+/* Flip front image on hover */
+.profile-image:hover .image-front {
+    transform: rotateY(-180deg); /* Flip backward */
+}
+
+/* Flip back image on hover */
+.profile-image:hover .image-back {
+    transform: rotateY(0deg); /* Flip forward */
+}
+
+/* Profile text styling */
+.profile-text {
+    margin-left: 20px; /* Space to the left */
+    max-width: 600px; /* Max width */
+}
+
+/* Heading 2 styling */
+.profile-text h2 {
+    color: black; /* Black text color */
+    font-size: 24px; /* Font size */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+/* Paragraph styling */
+.profile-text p {
+    color: black; /* Black text color */
+    font-size: 18px; /* Font size */
+    margin-bottom: 20px; /* Space below paragraph */
+}
+
+/* Blockquote styling */
+.profile-text blockquote {
+    color: black; /* Black text color */
+    font-size: 18px; /* Font size */
+    font-style: italic; /* Italic font style */
+    margin: 20px 0; /* Vertical margins */
+    border-left: 4px solid #333; /* Left border for blockquote */
+    padding-left: 15px; /* Padding inside blockquote */
+}
+
+/* Link styling in profile text */
+.profile-text .blog-link {
+    font-size: 18px; /* Font size */
+    color: #000; /* Black text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold font */
+}
+
+/* Hover effect for links */
+.profile-text .blog-link:hover {
+    color: black; /* Darker text color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Gallery Section Styling */
+.gallery {
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center content vertically */
+    padding: 10px; /* Padding inside gallery */
+    height: auto; /* Auto height */
+    top: 50px; /* Position relative to top */
+    gap: 20px; /* Space between items */
+}
+
+/* Gallery item container styling */
+.gallery-item {
+    position: relative; /* Positioning for hover effects */
+    width: 100%; /* Full width */
+    max-width: 800px; /* Max width */
+    overflow: hidden; /* Hide overflow */
+    margin: auto; /* Center align */
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 50%; /* Half the width */
+    max-height: 600px; /* Max height */
+    position: relative; /* Position for slides */
+    margin: auto; /* Center align */
+}
+
+/* Individual slide styling */
+.mySlides {
+    display: none; /* Hidden by default */
+}
+
+/* Image styling in slides */
+.mySlides img {
+    width: 100%; /* Full width */
+    height: auto; /* Auto height */
+    transition: transform 0.3s ease; /* Smooth zoom on hover */
+}
+
+/* Zoom effect on hover */
+.gallery-item:hover .mySlides img {
+    transform: scale(1.2); /* Zoom in */
+}
+
+/* Hidden Content Cards Styling */
+.full-view {
+    max-width: 50%; /* Half the width */
+    max-height: 600px; /* Max height */
+    position: relative; /* Position for content */
+    margin: auto; /* Center align */
+    overflow: hidden; /* Hide overflow */
+}
+
+/* Image styling in hidden content */
+.full-view img {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the container */
+}
+
+/* Hover text styling */
+.full-view .hover-text {
+    position: absolute; /* Position at the bottom */
+    bottom: 0;
+    width: 100%; /* Full width */
+    text-align: center; /* Center align text */
+    padding: 10px; /* Padding inside hover text */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* White text color */
+    font-size: 1.2em; /* Font size */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Smooth fade-in effect */
+}
+
+/* Show hover text on hover */
+.full-view:hover .hover-text {
+    opacity: 1; /* Show hover text */
+}
+
+/* Additional hover text styling */
+.hover-text {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* White text color */
+    position: absolute; /* Position at the bottom */
+    bottom: 0;
+    width: 100%; /* Full width */
+    text-align: center; /* Center align text */
+    padding: 10px; /* Padding inside hover text */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+}
+
+/* Show hover text on hover */
+.gallery-item:hover .hover-text {
+    opacity: 1; /* Show hover text */
+    font-size: 16px; /* Font size */
+}
+
+/* Brand section styling */
+.brand-section {
+    padding: 50px 0; /* Padding inside section */
+    text-align: center; /* Center align text */
+    color: #fff; /* White text color */
+    margin-top: 50px; /* Space above section */
+    margin-bottom: 50px; /* Space below section */
+}
+
+/* Heading 2 styling for brand section */
+.brand-section h2 {
+    font-size: 32px; /* Large font size */
+    margin-bottom: 40px; /* Space below heading */
+    letter-spacing: 2px; /* Spacing between letters */
+    color: white; /* White text color */
+}
+
+/* Span styling inside brand section heading */
+.brand-section h2 span {
+    color: greenyellow; /* Greenish-yellow text color */
+    font-weight: bold; /* Bold font */
+}
+
+/* Brand grid layout */
+.brand-grid {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+    gap: 20px; /* Space between items */
+    justify-items: center; /* Center items horizontally */
+}
+
+/* Brand item styling */
+.brand-item img {
+    max-width: 100%; /* Full width */
+    height: auto; /* Auto height */
+    filter: grayscale(100%); /* Grayscale effect */
+    transition: filter 0.3s ease, transform 0.3s ease; /* Smooth filter and zoom effects */
+}
+
+/* Remove grayscale and zoom on hover */
+.brand-item img:hover {
+    filter: grayscale(0); /* Remove grayscale */
+    transform: scale(1.1); /* Zoom in */
+}
+
+/* Initial state: all brand items are off-screen to the left */
+.brand-item {
+    opacity: 0; /* Hidden by default */
+    transform: translateX(-100%); /* Move off-screen */
+    transition: transform 1s ease-out, opacity 1s ease-out; /* Smooth slide-in and fade-in */
+}
+
+/* When the brand section is in view, the items will animate to their normal position */
+.brand-item.visible {
+    opacity: 1; /* Show item */
+    transform: translateX(0); /* Move to original position */
+}
+
+/* Responsive grid for different screen sizes */
+@media (max-width: 1200px) {
+    .brand-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    }
+}
+
+@media (max-width: 992px) {
+    .brand-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+}
+
+@media (max-width: 576px) {
+    .brand-grid {
+        grid-template-columns: 1fr; /* 1 column */
+    }
+}
+
+/* Subscribe section styling */
+.subscribe-section {
+    margin: 0 auto; /* Center align section */
+    text-align: center; /* Center align text */
+    background-color: rgba(255,255,255,0.5); /* Transparent white background */
+    padding: 50px 30px; /* Padding inside section */
+    border-radius: 30px; /* Rounded corners */
+    max-width: 1000px; /* Max width */
+    width: 100%; /* Full width */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Box shadow */
+    z-index: 1; /* Stack on top */
+    margin-bottom: 50px; /* Space below section */
+    margin-top: 150px; /* Space above section */
+}
+
+/* Heading 2 styling for subscribe section */
+.subscribe-section h2 {
+    font-size: 32px; /* Large font size */
+    margin-bottom: 10px; /* Space below heading */
+    color: black; /* Black text color */
+}
+
+/* Paragraph styling for subscribe section */
+.subscribe-section p {
+    font-size: 18px; /* Font size */
+    margin-bottom: 20px; /* Space below paragraph */
+    color: black; /* Black text color */
+}
+
+/* Checkbox container styling */
+.checkbox-container {
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin-bottom: 20px; /* Space below container */
+    font-size: 18px; /* Font size */
+    line-height: 1.5; /* Line height */
+}
+
+/* Input styling for checkboxes */
+.checkbox-container input {
+    margin-right: 15px; /* Space to the right */
+    width: 20px; /* Fixed width */
+    height: 20px; /* Fixed height */
+}
+
+/* Link styling in checkbox container */
+.checkbox-container a {
+    color: #ffcc00; /* Yellow text color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Hover effect for links in checkbox container */
+.checkbox-container a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Input container styling */
+.input-container {
+    margin-bottom: 20px; /* Space below container */
+}
+
+/* Input field styling */
+.input-container input {
+    width: 100%; /* Full width */
+    padding: 15px; /* Padding inside input */
+    border: 1px solid #444; /* Dark border */
+    border-radius: 30px; /* Rounded corners */
+    background-color: #222; /* Dark background */
+    color: #ccc; /* Light text color */
+    font-size: 16px; /* Font size */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Subscribe button styling */
+.subscribe-button {
+    width: 100%; /* Full width */
+    padding: 15px; /* Padding inside button */
+    border: none; /* Remove border */
+    border-radius: 30px; /* Rounded corners */
+    background-color: #ff6600; /* Orange background */
+    color: #fff; /* White text color */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold font */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Footer styling */
+footer {
+    background-color: #222; /* Dark background */
+    color: #fff; /* White text color */
+    padding: 40px 0; /* Padding inside footer */
+    font-size: 16px; /* Font size */
+    margin-top: 50px; /* Space above footer */
+    position: relative; /* Position relative to content */
+    width: 100%; /* Full width */
+    clear: both; /* Clear floats */
+}
+
+/* Footer container layout */
+.footer-container {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space items evenly */
+    align-items: flex-start; /* Align items at the start */
+    max-width: 1200px; /* Max width */
+    margin: 0 auto; /* Center align container */
+    padding: 0 20px; /* Padding inside container */
+    gap: 40px; /* Space between columns */
+}
+
+/* Footer column styling */
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1; /* Flex-grow */
+    padding: 20px; /* Padding inside columns */
+}
+
+/* Footer heading styling */
+.footer-left h3,
+.footer-center h3,
+.footer-right h3 {
+    font-size: 20px; /* Font size */
+    margin-bottom: 20px; /* Space below heading */
+    color: greenyellow; /* Greenish-yellow text color */
+    align-items: center; /* Center align items */
+}
+
+/* Footer paragraph styling */
+.footer-left p,
+.footer-right p {
+    margin-bottom: 15px; /* Space below paragraph */
+    line-height: 1.6; /* Line height */
+    color: #b5b5b5; /* Light gray text color */
+}
+
+/* Social icons list styling */
+.social-icons {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    display: flex; /* Flexbox layout */
+    gap: 15px; /* Space between icons */
+}
+
+/* Social icon item styling */
+.social-icons li {
+    display: inline-block; /* Inline block layout */
+}
+
+/* Social icon link styling */
+.social-icons a {
+    color: #fff; /* White text color */
+    font-size: 18px; /* Font size */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+/* Hover effect for social icons */
+.social-icons a:hover {
+    color: #00aced; /* Blue color on hover */
+}
+
+/* Newsletter form layout */
+.newsletter-form {
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack items vertically */
+    max-width: 300px; /* Max width */
+}
+
+/* Input field styling for email */
+.newsletter-form input[type="email"] {
+    padding: 10px; /* Padding inside input */
+    margin-bottom: 10px; /* Space below input */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+}
+
+/* Submit button styling */
+.newsletter-form button {
+    padding: 10px; /* Padding inside button */
+    background-color: #00aced; /* Blue background */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    color: #fff; /* White text color */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Hover effect for submit button */
+.newsletter-form button:hover {
+    background-color: #008bb9; /* Darker blue background on hover */
+}
+
+/* Footer bottom section styling */
+.footer-bottom {
+    text-align: center; /* Center align text */
+    padding: 20px 0; /* Padding inside bottom section */
+    background-color: #111; /* Darker background for bottom section */
+    color: #b5b5b5; /* Light gray text color */
+    font-size: 14px; /* Smaller font size */
+    margin-top: 20px; /* Space above bottom section */
+    width: 100%; /* Full width */
+    position: absolute; /* Absolute positioning */
+    bottom: 0; /* Align to bottom of page */
+    left: 0; /* Align to left of page */
+}
+
+/* Footer bottom paragraph styling */
+.footer-bottom p {
+    margin: 0; /* Reset default margin */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center; /* Center align columns */
+        gap: 20px; /* Reduce gap between sections */
+        text-align: center; /* Center align text */
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        padding: 10px; /* Reduce padding */
+        max-width: 100%; /* Full width columns */
+    }
+
+    .social-icons {
+        justify-content: center; /* Center the icons horizontally */
+    }
+
+    .newsletter-form {
+        width: 100%; /* Full width form */
+        display: flex; /* Flexbox layout */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        width: 80%; /* 80% width */
+        max-width: 300px; /* Max width */
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    .footer-bottom {
+        position: relative; /* Allow footer to flow with content */
+        text-align: center; /* Center align text */
+        padding: 20px 0; /* Padding inside bottom section */
+        width: 100%; /* Full width */
+        top: 40px; /* Adjust position relative to content */
+    }
+}
+
+/* Responsive styles for navigation */
+@media (max-width: 768px) {
+    nav .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        text-align: center; /* Center align links */
+        width: 100%; /* Full width */
+    }
+
+    nav .nav-links li {
+        margin-left: 0; /* Reset left margin */
+        margin-bottom: 20px; /* Space below each link */
+    }
+
+    nav .logo {
+        font-size: 18px; /* Smaller font size for logo */
+    }
+
+    .text-slideshow {
+        font-size: 11px; /* Smaller font size */
+        padding: 20px 0; /* Padding inside slideshow */
+    }
+
+    .profile-container {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center align text */
+    }
+
+    .profile-image {
+        width: 250px; /* Smaller width */
+        height: 250px; /* Smaller height */
+        margin-bottom: 20px; /* Space below image */
+        margin-top: 50px; /* Space above image */
+    }
+
+    .profile-text h2 {
+        font-size: 18px; /* Smaller font size */
+    }
+
+    .profile-text p {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .profile-text blockquote {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .profile-text .blog-link {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .slideshow-container, .full-view {
+        max-width: 90%; /* 90% width */
+    }
+    .hover-text h2{
+        font-size: 10px; /* Smaller font size */
+    }
+    .hover-text p{
+        font-size: 5px; /* Smaller font size */
+    }
+
+    .subscribe-section {
+        padding: 30px 0px; /* Reduce padding */
+    }
+    .brand-grid {
+        grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    }
+
+    footer {
+        font-size: 14px; /* Smaller font size */
+        height: auto; /* Auto height */
+    }
+}
+
+/* Responsive styles for tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hover-text h2{
+        font-size: 15px; /* Adjusted font size */
+    }
+    .hover-text p{
+        font-size: 10px; /* Adjusted font size */
+    }
+    .text-slideshow {
+        font-size: 18px; /* Adjusted font size */
+        padding: 20px 0; /* Adjusted padding */
+    }
+    .subscribe-section {
+        padding: 30px 0px; /* Adjusted padding */
+    }
+    .brand-grid {
+        grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    }
+}
+
+/* Mobile view for navigation */
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+        background-color: #333; /* Dark background */
+        position: absolute; /* Absolute positioning */
+        top: 85px; /* Position below the toggle */
+        left: 0; /* Align to left */
+    }
+
+    nav .nav-links.nav-open {
+        display: flex; /* Show links when open */
+    }
+
+    nav .nav-links li {
+        width: 100%; /* Full width links */
+        text-align: center; /* Center align text */
+        margin-left: -40px; /* Adjust left margin */
+        margin-bottom: -10px; /* Adjust bottom margin */
+    }
+
+    nav .nav-links li a {
+        padding: 15px 0; /* Padding inside links */
+        width: 100%; /* Full width */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show menu toggle */
+    }
+}
+
+/* Container for news section */
+.container {
+    display: flex; /* Flexbox layout */
+    width: 90%; /* 90% width */
+    max-width: 1200px; /* Max width */
+    height: 80vh; /* 80% viewport height */
+    background-color: rgba(255,255,255,0.2); /* Transparent white background */
+    padding: 20px; /* Padding inside container */
+    margin-left: 100px; /* Space to the left */
+    margin-top: 200px; /* Space above container */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Box shadow */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Left section of the container */
+.left-section {
+    flex: 1; /* 1/3rd of the container */
+    padding-right: 50px; /* Padding to the right */
+    border-right: 1px solid #233554; /* Right border */
+}
+
+/* Section title styling */
+.section-title {
+    font-size: 3.5rem; /* Large font size */
+    color: black; /* Black text color */
+    margin-bottom: 30px; /* Space below title */
+}
+
+/* News links list styling */
+.news-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+/* Individual news link styling */
+.news-link {
+    display: block; /* Block-level element */
+    font-size: 1.5rem; /* Font size */
+    color: #8892B0; /* Grayish-blue text color */
+    text-decoration: none; /* Remove underline */
+    margin-bottom: 10px; /* Space below link */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+/* Active and hover state for news links */
+.news-link.active,
+.news-link:hover {
+    color: #64FFDA; /* Greenish-blue text color */
+}
+
+/* Right section of the container */
+.right-section {
+    flex: 2; /* 2/3rds of the container */
+    padding-left: 50px; /* Padding to the left */
+    overflow-y: scroll; /* Vertical scrolling */
+    height: 100%; /* Full height */
+}
+
+/* Individual news item styling */
+.news-item {
+    margin-bottom: 40px; /* Space below news item */
+}
+
+/* Heading 2 styling for news items */
+.news-item h2 {
+    font-size: 2rem; /* Font size */
+    margin-bottom: 15px; /* Space below heading */
+    color: #64FFDA; /* Greenish-blue text color */
+}
+
+/* Paragraph styling for news items */
+.news-item p {
+    font-size: 1.2rem; /* Font size */
+    color: #CCD6F6; /* Light grayish-blue text color */
+}
+
+/* Custom scrollbar styling */
+.right-section::-webkit-scrollbar {
+    width: 8px; /* Width of scrollbar */
+}
+
+/* Custom scrollbar thumb styling */
+.right-section::-webkit-scrollbar-thumb {
+    background-color: #64FFDA; /* Greenish-blue scrollbar */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Responsive styles for larger tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        flex-direction: row; /* Restore row direction */
+        height: 80vh; /* Fixed height */
+        margin-top: 200px; /* Adjust top margin */
+        margin-left: 20px; /* Adjust left margin */
+    }
+
+    .left-section {
+        padding-right: 50px; /* Right padding */
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+
+    .section-title {
+        font-size: 3.5rem; /* Adjusted font size */
+    }
+
+    .right-section {
+        padding-left: 50px; /* Left padding */
+        height: 100%; /* Full height */
+        max-height: none; /* Remove max height */
+    }
+
+    .news-item h2 {
+        font-size: 2rem; /* Adjusted font size */
+    }
+
+    .news-item p {
+        font-size: 1.2rem; /* Adjusted font size */
+    }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 767px) {
+    .container {
+        margin-top: 150px; /* Adjust top margin */
+        margin-left: 5px; /* Adjust left margin */
+    }
+
+    .left-section {
+        padding-right: 0; /* Remove right padding */
+        border-right: none; /* Remove right border */
+        border-bottom: 1px solid #233554; /* Add bottom border */
+    }
+
+    .section-title {
+        font-size: 2rem; /* Smaller font size */
+    }
+
+    .right-section {
+        padding-left: 0; /* Remove left padding */
+        max-height: 100%; /* Full height */
+    }
+
+    .news-item h2 {
+        font-size: 1.5rem; /* Smaller font size */
+    }
+
+    .news-item p {
+        font-size: 1rem; /* Smaller font size */
+    }
+}

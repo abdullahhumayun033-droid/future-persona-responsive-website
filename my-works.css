@@ -1,0 +1,713 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif; /* Set font family */
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+    line-height: 1.4; /* Set line height for readability */
+    color: #333; /* Text color */
+    position: relative; /* Set up relative positioning for child elements */
+    font-size: 12px; /* Base font size */
+    background-color: rgba(100, 149, 237, 1); /* Background color with full opacity */
+    background-repeat: no-repeat; /* Prevent background image repetition */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    transition: background-color 0.5s ease-out; /* Smooth transition for background color changes */
+}
+
+/* Overlay effect for dark tint */
+.overlay {
+    position: fixed; /* Fix position to viewport */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width overlay */
+    height: 100%; /* Full height overlay */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark tint overlay */
+    pointer-events: none; /* Allow interaction with underlying elements */
+    z-index: -1; /* Place overlay behind other content */
+    transition: opacity 0.8s ease-out; /* Smooth transition for opacity changes */
+}
+
+/* Basic styles for the navigation bar */
+nav {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+    background-color: #333; /* Dark background color */
+    padding: 10px 20px; /* Padding inside the nav */
+    position: relative; /* Set relative position */
+    z-index: 10; /* Ensure nav stays on top */
+}
+
+/* Flexbox layout for navigation links */
+nav .nav-links {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Use flexbox for links */
+    justify-content: center; /* Center links */
+    font-size: 1.3em; /* Increase font size */
+    flex-grow: 1; /* Allow links to grow/shrink */
+}
+
+/* Individual list items for navigation */
+nav .nav-links li {
+    margin-left: 20px; /* Space between links */
+    position: relative; /* Set relative position for dropdowns */
+}
+
+/* Styling for anchor links */
+nav .nav-links li a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Padding inside links */
+    display: inline-block; /* Block-level link for padding */
+    transition: background-color 0.2s ease; /* Smooth transition for background on hover */
+}
+
+/* Hover effect for navigation links */
+nav .nav-links li a:hover {
+    background-color: #444; /* Darker background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Specific interaction for the "Future Plans" button with pulse effect */
+nav .future-plans {
+    position: relative; /* Position for pulse effect */
+    overflow: hidden; /* Hide overflow of pulse */
+    z-index: 2; /* Ensure pulse effect is visible */
+}
+
+nav .future-plans:hover::after {
+    content: ''; /* Empty content for pseudo-element */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%; /* Large size for pulse effect */
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2); /* Transparent white */
+    border-radius: 50%; /* Circular shape */
+    transform: translate(-50%, -50%); /* Center the pulse */
+    animation: pulse 1.7s ease-out; /* Animate the pulse */
+}
+.logo img {
+    width: 250px; /* Adjust the size of the logo */
+    height: 80px;
+}
+.logo-img:hover{
+    transform: scale(1.4);
+}
+
+/* Keyframes for pulse animation */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.1); /* Start small */
+        background: rgba(155, 255, 105, 1); /* Start with greenish color */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* End at full size */
+        opacity: 1; /* Full opacity at the end */
+    }
+}
+
+/* Dropdown menu for "My Works" */
+.dropdown {
+    position: relative; /* Positioning for dropdown */
+    z-index: 15; /* Ensure dropdown stays on top */
+}
+
+.dropdown .dropbtn {
+    background-color: #333; /* Match nav background */
+    border: none; /* No border on button */
+}
+
+/* Hover effect for dropdown button */
+.dropdown:hover .dropbtn {
+    background-color: #555; /* Darker background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Dropdown content styling */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position relative to button */
+    background-color: burlywood; /* Light brown background */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0px 8px 16px 0px rgba(90, 250, 120, 0.4); /* Drop shadow */
+    z-index: 20; /* Ensure content stays on top */
+}
+
+/* Link styling inside dropdown */
+.dropdown-content a {
+    color: black; /* Black text color */
+    padding: 12px 16px; /* Padding inside links */
+    text-decoration: inherit; /* Inherit text decoration */
+    display: block; /* Block-level links */
+}
+
+/* Hover effect for dropdown links */
+.dropdown-content a:hover {
+    background-color: #777; /* Darker background on hover */
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block; /* Display the dropdown */
+    z-index: 20; /* Ensure it stays above other content */
+}
+
+/* Interactive button for "Contact" with underline effect */
+nav .nav-links li:last-child a {
+    position: relative; /* Position for underline effect */
+}
+
+nav .nav-links li:last-child a::after {
+    content: ''; /* Empty content for pseudo-element */
+    position: absolute;
+    width: 0%; /* Start with no underline */
+    height: 2px; /* Thin underline */
+    bottom: -5px; /* Position below the text */
+    left: 0;
+    background-color: greenyellow; /* Greenish-yellow underline */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+/* Hover effect to expand underline */
+nav .nav-links li:last-child a:hover::after {
+    width: 100%; /* Full-width underline on hover */
+}
+
+/* Hamburger menu toggle for mobile */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Vertical layout */
+    justify-content: space-between; /* Evenly spaced lines */
+    width: 30px; /* Width of the toggle */
+    height: 21px; /* Height of the toggle */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.menu-toggle span {
+    display: block; /* Block-level span */
+    width: 100%; /* Full width */
+    height: 3px; /* Height of each line */
+    background: white; /* White lines */
+}
+
+/* My Work Section */
+.my-work-section {
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space items evenly */
+    padding: 180px 100px; /* Padding inside section */
+    max-width: 1200px; /* Maximum width */
+    margin: 50px auto; /* Center section with margin */
+    position: relative; /* Relative position for transformations */
+    transition: all 0.5s ease; /* Smooth transition for transformations */
+}
+
+.my-work-section:hover {
+    transform: scaleX(1.05); /* Scale horizontally on hover */
+    z-index: 2; /* Raise z-index on hover */
+}
+
+/* Text container inside My Work Section */
+.text-container {
+    width: 50%; /* Half width */
+    text-align: left; /* Left align text */
+    padding-right: 50px; /* Padding on the right */
+    transition: all 0.5s ease; /* Smooth transition for transformations */
+}
+
+.text-container:hover {
+    transform: scale(1.05); /* Scale on hover */
+    z-index: 2; /* Raise z-index on hover */
+}
+
+/* Section title styling */
+.section-title {
+    font-size: 3.5em; /* Large font size */
+    font-family: 'Brush Script MT', cursive; /* Script font */
+    margin-bottom: 20px; /* Space below title */
+    color: wheat; /* Wheat text color */
+    transition: all 0.3s ease; /* Smooth transition for transformations */
+}
+
+.section-title:hover {
+    transform: scale(1.1); /* Scale on hover */
+}
+
+/* Work description styling */
+.work-description {
+    font-size: 1.2em; /* Font size */
+    line-height: 1.4em; /* Line height for readability */
+    margin-bottom: 20px; /* Space below description */
+    transition: all 0.5s ease; /* Smooth transition for transformations */
+    color: wheat; /* Wheat text color */
+}
+
+.work-description:hover {
+    transform: scale(1.1); /* Scale on hover */
+}
+
+/* Image container inside My Work Section */
+.image-container {
+    position: relative; /* Positioning for child elements */
+    width: 50%; /* Half width */
+    height: 450px; /* Fixed height */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content horizontally */
+}
+
+/* Background image inside image container */
+.background-image {
+    position: relative; /* Relative positioning */
+    width: 100%; /* Full width */
+    height: auto; /* Auto height to maintain aspect ratio */
+    border-radius: 20px; /* Rounded corners */
+    object-fit: contain; /* Contain image within container */
+    transition: all 0.5s ease; /* Smooth transition for transformations */
+}
+
+.background-image:hover {
+    transform: scale(1.2); /* Scale on hover */
+    z-index: 2; /* Raise z-index on hover */
+}
+
+/* Main image inside image container */
+.main-image {
+    position: absolute; /* Absolute positioning */
+    width: 200px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    border-radius: 50%; /* Circular image */
+    top: 10%; /* Position from the top */
+    left: 10%; /* Position from the left */
+    transform: translate(-50%, -50%); /* Center the image */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+    z-index: 2; /* Ensure image stays on top */
+    transition: all 0.5s ease; /* Smooth transition for transformations */
+}
+
+.main-image:hover {
+    transform: scale(1.5); /* Scale on hover */
+    z-index: 2; /* Ensure it stays on top */
+}
+
+/* Content container for image reveal on scroll */
+.content-container {
+    position: relative; /* Relative positioning */
+    height: 80vh; /* Viewport height for responsiveness */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    overflow: hidden; /* Hide overflow */
+    background: linear-gradient(to bottom, grey, peachpuff); /* Gradient background */
+    padding: 10px; /* Padding inside container */
+    box-sizing: border-box; /* Include padding in box model */
+}
+
+/* Image box inside content container */
+.image-box {
+    position: absolute; /* Absolute positioning */
+    width: 50%; /* Half width */
+    height: 50%; /* Half height */
+    transition: transform 1s ease-in-out; /* Smooth transition for transformations */
+    z-index: 3; /* Ensure image stays on top */
+}
+
+/* Positioning for left-side image */
+.image-box-left {
+    left: 0;
+    transform: translateX(0); /* Initial position */
+}
+
+/* Positioning for right-side image */
+.image-box-right {
+    right: 0;
+    transform: translateX(0); /* Initial position */
+}
+
+/* Text box inside content container */
+.text-box {
+    position: relative; /* Relative positioning */
+    width: 50%; /* Half width */
+    padding: 20px; /* Padding inside text box */
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+    color: black; /* Text color */
+}
+
+/* Text box styling for left-side text */
+.text-box-left {
+    text-align: left; /* Left-align text */
+    padding-left: 5%; /* Padding on the left */
+    font-size: 1.5em; /* Font size */
+}
+
+/* Text box styling for right-side text */
+.text-box-right {
+    text-align: right; /* Right-align text */
+    padding-right: 5%; /* Padding on the right */
+    font-size: 1.5em; /* Font size */
+}
+
+/* Adjust margin for specific work section */
+#work3 {
+    margin-top: 30px; /* Margin above section */
+}
+
+/* General image styling */
+img {
+    width: 70%; /* Set width to 70% of container */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover entire container */
+}
+
+/* Reveal effect for left-side image box */
+.revealed-left .image-box-left {
+    transform: translateX(-100%); /* Move out of view */
+}
+
+/* Reveal effect for right-side image box */
+.revealed-right .image-box-right {
+    transform: translateX(100%); /* Move out of view */
+}
+
+/* Reveal effect for text boxes */
+.revealed-left .text-box-left,
+.revealed-right .text-box-right {
+    opacity: 1; /* Make text fully visible */
+}
+
+/* Work circle container for images */
+.work-circle {
+    position: relative; /* Positioning for child elements */
+    width: 100%; /* Full width */
+    height: 600px; /* Fixed height */
+    margin: 50px auto; /* Center section with margin */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+/* Individual work item inside work circle */
+.work-item {
+    width: 150px; /* Fixed width */
+    height: 150px; /* Fixed height */
+    border-radius: 10px; /* Rounded corners */
+    position: absolute; /* Absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center within the circle */
+    transition: transform 1s ease, top 1s ease, left 1s ease; /* Smooth transition for movement */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.work-item img {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    border-radius: 10px; /* Rounded corners */
+    object-fit: cover; /* Cover entire container */
+}
+
+/* Positioning for work items around the circle */
+.work-item:nth-child(2) { top: 0%; left: 50%; transform: translate(-50%, -50%); }
+.work-item:nth-child(3) { top: 10%; left: 90%; transform: translate(-50%, -50%); }
+.work-item:nth-child(4) { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+.work-item:nth-child(5) { top: 90%; left: 90%; transform: translate(-50%, -50%); }
+.work-item:nth-child(6) { top: 100%; left: 50%; transform: translate(-50%, -50%); }
+.work-item:nth-child(7) { top: 90%; left: 10%; transform: translate(-50%, -50%); }
+.work-item:nth-child(8) { top: 50%; left: 0%; transform: translate(-50%, -50%); }
+.work-item:nth-child(9) { top: 10%; left: 10%; transform: translate(-50%, -50%); }
+
+/* Hover effect for work items */
+.work-item:hover {
+    transform: scale(1.2); /* Scale on hover */
+    z-index: 20; /* Raise z-index on hover */
+}
+
+/* Rotate animation for work items */
+.work-item {
+    animation: rotate 12s linear infinite; /* Continuous rotation */
+}
+
+.work-item.in-viewport {
+    /* Specific positions for items in viewport */
+    top: 20%; /* Adjust top position */
+    left: 20%; /* Adjust left position */
+}
+
+/* Popup styling */
+#popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position on screen */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center within viewport */
+    width: 50%; /* Set width */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background color */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+    z-index: 200; /* Ensure popup stays on top */
+    padding: 24px; /* Padding inside popup */
+    transition: all 0.5s ease; /* Smooth transition for transformations */
+    color: white; /* White text color */
+}
+
+#popup:hover {
+    z-index: 200; /* Ensure popup stays on top */
+}
+
+/* Popup text styling */
+#popup-text {
+    font-size: 1.3em; /* Font size */
+    color: #fff; /* White text color */
+    margin-top: 10px; /* Margin above text */
+}
+
+/* Close button styling */
+.close-btn {
+    position: absolute; /* Absolute positioning */
+    top: 10px; /* Position from the top */
+    right: 10px; /* Position from the right */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.5em; /* Font size */
+    color: yellow; /* Yellow text color */
+}
+
+/* Footer styling */
+footer {
+    background-color: #222; /* Dark background color */
+    color: #fff; /* White text color */
+    padding: 40px 0; /* Padding inside footer */
+    font-size: 16px; /* Base font size */
+    margin-top: 50px; /* Space above footer */
+    position: relative; /* Relative positioning */
+    width: 100%; /* Full width footer */
+    clear: both; /* Clear floats */
+}
+
+/* Flexbox layout for footer */
+.footer-container {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space out columns */
+    align-items: flex-start; /* Align items at the top */
+    max-width: 1200px; /* Maximum width of footer content */
+    margin: 0 auto; /* Center the footer content */
+    padding: 0 20px; /* Padding inside the footer */
+    gap: 40px; /* Space between columns */
+}
+
+/* Footer column styling */
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1; /* Allow columns to grow/shrink */
+    padding: 20px; /* Padding inside columns */
+}
+
+/* Footer heading styling */
+.footer-left h3,
+.footer-center h3,
+.footer-right h3 {
+    font-size: 20px; /* Font size for headings */
+    margin-bottom: 20px; /* Space below headings */
+    color: greenyellow; /* Greenish-yellow color */
+    align-items: center; /* Center align items */
+}
+
+/* Paragraph styling inside footer */
+.footer-left p,
+.footer-right p {
+    margin-bottom: 15px; /* Space below paragraphs */
+    line-height: 1.6; /* Line height for readability */
+    color: #b5b5b5; /* Light gray text color */
+}
+
+/* Social media icons styling */
+.social-icons {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    display: flex; /* Flexbox layout */
+    gap: 15px; /* Space between icons */
+}
+
+/* Individual social icon styling */
+.social-icons li {
+    display: inline-block; /* Inline block for icons */
+}
+
+/* Link styling for social media icons */
+.social-icons a {
+    color: #fff; /* White icon color */
+    font-size: 18px; /* Font size */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+/* Hover effect for social media icons */
+.social-icons a:hover {
+    color: #00aced; /* Light blue on hover */
+}
+
+/* Newsletter form styling */
+.newsletter-form {
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Vertical layout */
+    max-width: 300px; /* Limit the width */
+}
+
+/* Input styling in newsletter form */
+.newsletter-form input[type="email"] {
+    padding: 10px; /* Padding inside input */
+    margin-bottom: 10px; /* Space below input */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+}
+
+/* Submit button styling in newsletter form */
+.newsletter-form button {
+    padding: 10px; /* Padding inside button */
+    background-color: #00aced; /* Light blue background */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    color: #fff; /* White text color */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+/* Hover effect for submit button */
+.newsletter-form button:hover {
+    background-color: #008bb9; /* Darker blue background on hover */
+}
+
+/* Footer bottom section styling */
+.footer-bottom {
+    text-align: center; /* Center align text */
+    padding: 20px 0; /* Padding inside bottom section */
+    background-color: #111; /* Darker background for bottom section */
+    color: #b5b5b5; /* Light gray text color */
+    font-size: 14px; /* Smaller font size */
+    margin-top: 20px; /* Space above bottom section */
+    width: 100%; /* Full width */
+    position: absolute; /* Absolute positioning */
+    bottom: 0; /* Align to bottom of page */
+    left: 0; /* Align to left of page */
+}
+
+/* Footer bottom paragraph styling */
+.footer-bottom p {
+    margin: 0; /* Reset default margin */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    /* Footer adjustments for mobile */
+    .footer-container {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center; /* Center align columns */
+        gap: 20px; /* Reduce gap between sections */
+        text-align: center; /* Center align text */
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        padding: 10px; /* Reduce padding */
+        max-width: 100%; /* Full width columns */
+    }
+
+    /* Center social icons on mobile */
+    .social-icons {
+        justify-content: center; /* Center icons */
+    }
+
+    /* Newsletter form adjustments for mobile */
+    .newsletter-form {
+        width: 100%; /* Full width form */
+        display: flex; /* Flexbox layout */
+        flex-direction: column; /* Vertical layout */
+        align-items: center; /* Center align form */
+    }
+
+    /* Input and button adjustments for mobile */
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        width: 80%; /* Adjust width */
+        max-width: 300px; /* Limit max-width */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    /* Footer bottom adjustments for mobile */
+    .footer-bottom {
+        position: relative; /* Allow footer to flow with content */
+        text-align: center; /* Center align text */
+        padding: 20px 0; /* Padding inside bottom section */
+        width: 100%; /* Full width */
+        top: 40px; /* Position relative to content */
+    }
+}
+
+/* Mobile view for navigation */
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+        background-color: #333; /* Dark background */
+        position: absolute; /* Absolute positioning */
+        top: 85px; /* Position below the toggle */
+        left: 0; /* Align to left */
+    }
+
+    nav .nav-links.nav-open {
+        display: flex; /* Show links when open */
+    }
+
+    nav .nav-links li {
+        width: 100%; /* Full width links */
+        text-align: center; /* Center align text */
+        margin-left: -40px; /* Adjust margin */
+    }
+
+    nav .nav-links li a {
+        padding: 15px 0; /* Padding inside links */
+        width: 100%; /* Full width */
+    }
+
+    /* Show hamburger menu toggle on mobile */
+    .menu-toggle {
+        display: flex; /* Show toggle */
+    }
+
+    /* My Work section adjustments for mobile */
+    .my-work-section {
+        padding: 30px 10px; /* Reduce padding */
+    }
+
+    /* Section title adjustments for mobile */
+    .section-title {
+        font-size: 1.8em; /* Reduce font size */
+        text-align: center; /* Center align text */
+    }
+
+    /* Work description adjustments for mobile */
+    .work-description {
+        font-size: 1em; /* Reduce font size */
+        text-align: center; /* Center align text */
+    }
+
+    /* Image container adjustments for mobile */
+    .image-container {
+        height: 250px; /* Reduce height */
+        margin-top: 20px; /* Add margin above */
+    }
+
+    /* Main image adjustments for mobile */
+    .main-image {
+        top: 10%;
+        left: 20%;
+        transform: translateX(-50%); /* Adjust position */
+        width: 100px; /* Reduce size */
+        height: 100px; /* Reduce size */
+    }
+}

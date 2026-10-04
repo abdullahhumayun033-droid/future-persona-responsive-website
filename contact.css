@@ -1,0 +1,631 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif; /* Sets the default font family */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    line-height: 1.4; /* Improves readability by setting line height */
+    color: #333; /* Sets the text color to dark grey */
+    position: relative; /* Establishes a containing block for positioned elements */
+    font-size: 12px; /* Sets the base font size */
+    background-color: rgba(100, 149, 237, 1); /* Cornflower blue background with full opacity */
+    background-repeat: no-repeat; /* Prevents background image from repeating */
+    background-size: cover; /* Ensures the background image covers the entire area */
+    background-position: center; /* Centers the background image */
+    transition: background-color 0.5s ease-out; /* Smooth transition for background color changes */
+}
+
+/* Overlay used for darkening the background */
+.overlay {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the viewport */
+    height: 100%; /* Full height of the viewport */
+    background-color: rgba(0, 0, 0, 0.8); /* Black overlay with opacity for a tint effect */
+    pointer-events: none; /* Allows interactions with underlying elements */
+    z-index: -1; /* Stacks the overlay behind other elements */
+    transition: opacity 0.8s ease-out; /* Smooth transition for opacity changes */
+}
+
+/* Basic styles for the navigation bar */
+nav {
+    display: flex; /* Flexbox layout for horizontal alignment */
+    justify-content: space-between; /* Space between navigation items */
+    align-items: center; /* Vertically centers navigation items */
+    background-color: #333; /* Dark background for the navigation bar */
+    padding: 10px 20px; /* Adds spacing inside the navigation bar */
+    position: relative; /* Establishes a new stacking context */
+    z-index: 10; /* Ensures the navigation bar stays above certain elements */
+}
+
+nav .nav-links {
+    list-style: none; /* Removes default bullet points from list items */
+    display: flex; /* Flexbox layout for horizontal alignment of links */
+    justify-content: center; /* Centers the navigation links */
+    font-size: 1.3em; /* Increases the font size of the links */
+    flex-grow: 1; /* Allows the navigation links to grow and take up available space */
+}
+
+nav .nav-links li {
+    margin-left: 20px; /* Adds space between each navigation item */
+    position: relative; /* Allows for absolute positioning of child elements */
+}
+
+nav .nav-links li a {
+    color: #fff; /* Sets link text color to white */
+    text-decoration: none; /* Removes underlining from links */
+    padding: 10px 20px; /* Adds padding around the links */
+    display: inline-block; /* Allows padding and margin to be applied */
+    transition: background-color 0.2s ease; /* Smooth transition for background color on hover */
+}
+
+nav .nav-links li a:hover {
+    background-color: #444; /* Darker background color on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Specific interaction for the "Future Plans" button with pulse effect */
+nav .future-plans {
+    position: relative; /* Positions relative to its normal position */
+    overflow: hidden; /* Ensures child elements don't overflow */
+    z-index: 2; /* Ensures the element stays above others */
+}
+
+/* Pulse animation on hover for "Future Plans" */
+nav .future-plans:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2); /* Light overlay for pulse effect */
+    border-radius: 50%; /* Makes the pulse circular */
+    transform: translate(-50%, -50%); /* Centers the pulse */
+    animation: pulse 1.7s ease-out; /* Triggers the pulse animation */
+}
+.logo img {
+    width: 250px; /* Adjust the size of the logo */
+    height: 80px;
+}
+.logo-img:hover{
+    transform: scale(1.4);
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.1); /* Starts small */
+        background: rgba(155, 255, 105, 1); /* Initial color */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* Grows to full size */
+        opacity: 1; /* Ensures full opacity */
+    }
+}
+
+/* Dropdown menu for "My Works" */
+.dropdown {
+    position: relative; /* Positions the dropdown relative to its container */
+    z-index: 15; /* Ensures dropdown stays on top */
+}
+
+.dropdown .dropbtn {
+    background-color: #333; /* Dark background for the dropdown button */
+    border: none; /* Removes default border */
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #555; /* Changes background color on hover */
+    border-radius: 5px; /* Adds rounded corners on hover */
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioned relative to the dropdown */
+    background-color: burlywood; /* Light brown background */
+    min-width: 160px; /* Minimum width for the dropdown */
+    box-shadow: 0px 8px 16px 0px rgba(90, 250, 120, 0.4); /* Adds a shadow */
+    z-index: 20; /* Highest z-index for dropdown content */
+}
+
+.dropdown-content a {
+    color: black; /* Sets link color to black */
+    padding: 12px 16px; /* Adds padding inside each link */
+    text-decoration: inherit; /* Inherits text decoration (usually none) */
+    display: block; /* Makes the links block-level elements */
+}
+
+.dropdown-content a:hover {
+    background-color: #777; /* Changes background color on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Shows the dropdown on hover */
+    z-index: 20; /* Ensures it stays above other content */
+}
+
+/* Interactive button for "Contact" with underline effect */
+nav .nav-links li:last-child a {
+    position: relative; /* Allows positioning of the underline */
+}
+
+nav .nav-links li:last-child a::after {
+    content: ''; /* Creates an underline effect */
+    position: absolute;
+    width: 0%; /* Starts with no underline */
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: greenyellow; /* Bright green-yellow color */
+    transition: width 1s ease; /* Smoothly expands the underline */
+}
+
+nav .nav-links li:last-child a:hover::after {
+    width: 100%; /* Expands underline on hover */
+}
+
+/* Hero Section */
+.contact-hero {
+    background: linear-gradient(to bottom, rosybrown,dimgrey); /* Gradient background */
+    background-size: cover; /* Covers the entire area */
+    background-position: center; /* Centers the background image */
+    text-align: center; /* Centers text horizontally */
+    padding: 80px 20px; /* Adds padding inside the hero section */
+    color: white; /* White text color */
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in animation */
+    height: 300px; /* Sets height of the hero section */
+}
+
+.contact-hero h1 {
+    font-size: 48px; /* Large font size for the main heading */
+    margin: 0; /* Removes default margin */
+    color: black; /* Sets heading color to black */
+}
+
+.contact-hero p {
+    font-size: 24px; /* Large font size for the paragraph */
+    color: black; /* Sets paragraph color to black */
+}
+
+/* Contact Info Section */
+.contact-info {
+    color: black; /* Sets text color to black */
+    padding: 50px 20px; /* Adds padding around the contact info section */
+}
+
+.info-box {
+    display: flex; /* Flexbox layout for horizontal alignment */
+    justify-content: space-between; /* Space between info items */
+    align-items: flex-start; /* Aligns items at the start of the flex container */
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 0 auto; /* Centers the container */
+    gap: 20px; /* Adds space between the info items */
+}
+
+.info-item {
+    flex: 1; /* Each item takes equal space */
+    padding: 20px; /* Adds padding inside each item */
+    border-radius: 8px; /* Rounds the corners */
+    background-color: rgba(255,255,255,0.5); /* Semi-transparent white background */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transitions for transform and background color */
+    height: 200px; /* Sets height of the info items */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.info-item h2 {
+    font-size: 24px; /* Font size for the item heading */
+    margin-bottom: 10px; /* Adds space below the heading */
+}
+
+.info-item p {
+    font-size: 16px; /* Font size for the item paragraphs */
+}
+
+.info-item:hover {
+    transform: translateY(-10px); /* Moves the item up on hover */
+    background-color: #555; /* Darkens the background color on hover */
+    color: white; /* Changes text color to white on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deepens the shadow on hover */
+}
+
+/* Contact Form Section */
+.contact-form {
+    flex: 1; /* Form takes equal space as other items in flex container */
+    padding: 20px; /* Adds padding inside the form */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    border-radius: 8px; /* Rounds the corners of the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    text-align: center; /* Centers text inside the form */
+    max-width: 700px; /* Sets a maximum width for the form */
+    width: 100%; /* Form takes full width of its container */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    margin-left: 350px; /* Centers the form within its container */
+}
+
+.contact-form h2 {
+    font-size: 32px; /* Large font size for the form heading */
+    margin-bottom: 30px; /* Adds space below the heading */
+    color: black; /* Sets heading color to black */
+}
+
+.contact-form form {
+    max-width: 800px; /* Sets a maximum width for the form fields */
+    margin: 0 auto; /* Centers the form within its container */
+    display: grid; /* Grid layout for form fields */
+    grid-template-columns: 1fr; /* Single column grid */
+    gap: 20px; /* Space between form fields */
+    color: black; /* Sets text color inside the form */
+}
+
+.form-group {
+    display: flex; /* Flexbox layout for labels and inputs */
+    flex-direction: column; /* Aligns items vertically */
+    text-align: left; /* Aligns text to the left */
+}
+
+.form-group label {
+    font-size: 18px; /* Font size for the labels */
+    margin-bottom: 8px; /* Adds space below the label */
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px; /* Adds padding inside input and textarea */
+    font-size: 16px; /* Font size for the input and textarea */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Rounds the corners */
+    outline: none; /* Removes default outline */
+    transition: border 0.3s ease; /* Smooth transition for border color on focus */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border: 1px solid #333; /* Darker border color on focus */
+}
+
+button[type="submit"] {
+    padding: 15px 30px; /* Adds padding inside the button */
+    font-size: 18px; /* Font size for the button text */
+    background-color: #333; /* Dark background color */
+    color: white; /* White text color */
+    border: none; /* Removes default border */
+    border-radius: 24px; /* Rounds the corners */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions for background color and transform */
+    position: relative; /* Allows for positioning of child elements */
+    overflow: hidden; /* Hides overflowing content */
+}
+
+button[type="submit"]:hover {
+    background-color: greenyellow; /* Changes background color on hover */
+    transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+button[type="submit"]:before {
+    content: ''; /* Empty content for the overlay */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2); /* Light overlay */
+    border-radius: 50%; /* Circular overlay */
+    transform: translate(-50%, -50%) scale(0); /* Starts small and centered */
+    transition: transform 0.5s ease; /* Smooth transition for scaling */
+}
+
+button[type="submit"]:hover:before {
+    transform: translate(-50%, -50%) scale(1); /* Expands overlay on hover */
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 50px 20px; /* Adds padding around the FAQ section */
+    color: #333; /* Dark grey text color */
+}
+
+.faq-section h2 {
+    text-align: center; /* Centers the FAQ heading */
+    font-size: 32px; /* Large font size for the heading */
+    margin-bottom: 30px; /* Adds space below the heading */
+    color: black; /* Sets heading color to black */
+}
+
+.faq-container {
+    max-width: 800px; /* Sets a maximum width for the FAQ container */
+    margin: 0 auto; /* Centers the FAQ container */
+}
+
+.faq-item {
+    background-color: rgba(255,255,255,0.5); /* Semi-transparent white background */
+    border-radius: 8px; /* Rounds the corners */
+    padding: 20px; /* Adds padding inside the FAQ items */
+    margin-bottom: 20px; /* Adds space below each FAQ item */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: transform 0.3s ease; /* Smooth transition for transform on hover */
+}
+
+.faq-item h3 {
+    font-size: 20px; /* Font size for the FAQ item heading */
+    margin-bottom: 10px; /* Adds space below the heading */
+}
+
+.faq-item p {
+    font-size: 16px; /* Font size for the FAQ item paragraphs */
+    margin: 0; /* Removes default margin */
+}
+
+.faq-item:hover {
+    transform: translateY(-10px); /* Moves the FAQ item up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deepens the shadow on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #222; /* Dark background for the footer */
+    color: #fff; /* White text color */
+    padding: 40px 0; /* Adds padding around the footer */
+    font-size: 16px; /* Font size for the footer text */
+    margin-top: 50px; /* Adds space above the footer */
+    position: relative; /* Establishes a new stacking context */
+    width: 100%; /* Footer takes full width of the viewport */
+    clear: both; /* Clears floats from previous elements */
+}
+
+.footer-container {
+    display: flex; /* Flexbox layout for footer sections */
+    justify-content: space-between; /* Space between footer sections */
+    align-items: flex-start; /* Aligns items at the start of the flex container */
+    max-width: 1200px; /* Maximum width of the footer container */
+    margin: 0 auto; /* Centers the footer container */
+    padding: 0 20px; /* Adds padding inside the footer container */
+    gap: 40px; /* Adds space between the footer columns */
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1; /* Each footer section takes equal space */
+    padding: 20px; /* Adds padding inside each footer section */
+}
+
+.footer-left h3,
+.footer-center h3,
+.footer-right h3 {
+    font-size: 20px; /* Font size for the footer headings */
+    margin-bottom: 20px; /* Adds space below the headings */
+    color: greenyellow; /* Bright green-yellow color for the headings */
+    align-items: center; /* Centers the headings within the sections */
+}
+
+.footer-left p,
+.footer-right p {
+    margin-bottom: 15px; /* Adds space below the paragraphs */
+    line-height: 1.6; /* Increases line height for readability */
+    color: #b5b5b5; /* Light grey text color */
+}
+
+.social-icons {
+    list-style: none; /* Removes default bullet points from the list */
+    padding: 0; /* Removes default padding */
+    display: flex; /* Flexbox layout for horizontal alignment of icons */
+    gap: 15px; /* Adds space between the icons */
+}
+
+.social-icons li {
+    display: inline-block; /* Makes each icon an inline-block element */
+}
+
+.social-icons a {
+    color: #fff; /* White color for the icons */
+    font-size: 18px; /* Font size for the icons */
+    text-decoration: none; /* Removes underlining from the icons */
+    transition: color 0.3s; /* Smooth transition for color changes */
+}
+
+.social-icons a:hover {
+    color: #00aced; /* Changes icon color to light blue on hover */
+}
+
+.newsletter-form {
+    display: flex; /* Flexbox layout for the form */
+    flex-direction: column; /* Aligns form fields vertically */
+    max-width: 300px; /* Sets a maximum width for the form */
+}
+
+.newsletter-form input[type="email"] {
+    padding: 10px; /* Adds padding inside the email input */
+    margin-bottom: 10px; /* Adds space below the email input */
+    border: none; /* Removes default border */
+    border-radius: 4px; /* Rounds the corners */
+    font-size: 16px; /* Font size for the email input */
+}
+
+.newsletter-form button {
+    padding: 10px; /* Adds padding inside the button */
+    background-color: #00aced; /* Light blue background color */
+    border: none; /* Removes default border */
+    border-radius: 4px; /* Rounds the corners */
+    color: #fff; /* White text color */
+    font-size: 16px; /* Font size for the button text */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.newsletter-form button:hover {
+    background-color: #008bb9; /* Darkens the background color on hover */
+}
+
+.footer-bottom {
+    text-align: center; /* Centers text inside the footer bottom */
+    padding: 20px 0; /* Adds padding around the footer bottom */
+    background-color: #111; /* Very dark background color */
+    color: #b5b5b5; /* Light grey text color */
+    font-size: 14px; /* Smaller font size for the footer bottom text */
+    margin-top: 20px; /* Adds space above the footer bottom */
+    width: 100%; /* Footer bottom takes full width of the viewport */
+    position: absolute; /* Positioned relative to its container */
+    bottom: 0; /* Positions the footer bottom at the bottom of its container */
+    left: 0; /* Aligns the footer bottom to the left */
+}
+
+.footer-bottom p {
+    margin: 0; /* Removes default margin */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Starts fully transparent */
+        transform: translateY(-20px); /* Starts slightly above its final position */
+    }
+    100% {
+        opacity: 1; /* Ends fully opaque */
+        transform: translateY(0); /* Ends at its original position */
+    }
+}
+
+/* Responsive Adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Adjust the layout for large tablets and small desktop screens */
+    .contact-hero {
+        height: 200px; /* Reduces the height of the hero section */
+    }
+
+    .contact-form {
+        max-width: 600px; /* Reduces the maximum width of the form */
+        margin-left: auto;
+        margin-right: auto; /* Centers the form */
+    }
+
+    .faq-container {
+        max-width: 600px; /* Reduces the maximum width of the FAQ container */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        height: 150px; /* Further reduces the height of the hero section */
+    }
+    .info-box {
+        flex-direction: column; /* Stacks the info items vertically */
+        align-items: center; /* Centers the info items */
+    }
+
+    .info-item {
+        width: 50%; /* Reduces the width of the info items */
+        margin-bottom: 20px; /* Adds space below each item */
+    }
+
+    .contact-form {
+        max-width: 400px; /* Further reduces the maximum width of the form */
+        margin-left: auto;
+        margin-right: auto; /* Centers the form */
+    }
+
+    .faq-container {
+        max-width: 400px; /* Further reduces the maximum width of the FAQ container */
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+
+    .footer-container {
+        flex-direction: column; /* Stacks footer sections vertically */
+        align-items: center; /* Centers the footer sections */
+        gap: 20px; /* Reduces the gap between sections */
+        text-align: center; /* Centers text inside the footer sections */
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        padding: 10px; /* Reduces padding inside each footer section */
+        max-width: 100%; /* Ensures each section takes full width */
+    }
+
+    .social-icons {
+        justify-content: center; /* Centers the icons horizontally */
+    }
+
+    .newsletter-form {
+        width: 100%; /* Makes the form take up full width on mobile */
+        display: flex; /* Flexbox layout for the form */
+        flex-direction: column; /* Aligns form fields vertically */
+        align-items: center; /* Centers the form fields */
+    }
+
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        width: 80%; /* Makes input and button the same width */
+        max-width: 300px; /* Limits the max-width */
+        box-sizing: border-box; /* Includes padding in width calculation */
+    }
+
+    .footer-bottom {
+        position: relative; /* Allows footer to flow with content on small screens */
+        text-align: center; /* Centers text inside the footer bottom */
+        padding: 20px 0; /* Adds padding around the footer bottom */
+        width: 100%; /* Footer bottom takes full width of the viewport */
+        top: 40px; /* Positions the footer bottom slightly higher */
+    }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none; /* Hides the navigation links by default */
+        flex-direction: column; /* Stacks links vertically */
+        width: 100%; /* Links take full width */
+        background-color: #333; /* Dark background for the navigation */
+        position: absolute; /* Positioned relative to the container */
+        top: 85px; /* Positions the links below the toggle */
+        left: 0;
+        z-index: 10; /* Ensures it stays above other content */
+    }
+
+    nav .nav-links.nav-open {
+        display: flex; /* Shows the links when nav-open is added */
+    }
+
+    nav .nav-links li {
+        width: 100%; /* Each list item takes full width */
+        text-align: center; /* Centers the text */
+        margin-left: -30px; /* Adjusts positioning of the links */
+    }
+
+    nav .nav-links li a {
+        padding: 15px 0; /* Adds padding inside the links */
+        width: 100%; /* Links take full width */
+    }
+
+    .menu-toggle {
+        display: flex; /* Displays the toggle button */
+        flex-direction: column; /* Stacks the toggle bars vertically */
+        justify-content: space-between; /* Evenly spaces the toggle bars */
+        width: 30px;
+        height: 21px;
+        cursor: pointer; /* Changes cursor to pointer on hover */
+    }
+
+    .menu-toggle span {
+        display: block; /* Displays each bar as a block element */
+        width: 100%;
+        height: 3px;
+        background: white; /* White color for the toggle bars */
+    }
+}
+
+/* Initial state: hidden with a slight downward shift */
+.fade-in {
+    opacity: 0; /* Starts fully transparent */
+    transform: translateY(20px); /* Starts slightly below its final position */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition for opacity and transform */
+}
+
+/* When visible: full opacity and original position */
+.fade-in.visible {
+    opacity: 1; /* Ends fully opaque */
+    transform: translateY(0); /* Ends at its original position */
+}

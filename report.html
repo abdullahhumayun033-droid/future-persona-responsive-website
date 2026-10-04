@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Character encoding set to UTF-8 for proper text rendering -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on mobile devices -->
+  <title>Project Report | Future Persona</title> <!-- Title of the webpage -->
+  <link rel="stylesheet" href="report.css"> <!-- Link to your CSS file for styling -->
+  <script src="report.js" defer></script> <!-- Link to your JavaScript file, deferred to load after HTML -->
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav>
+  <!-- Logo Section -->
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logobg.png" alt="Logo" class="logo-img">
+    </a>
+  </div>
+  <div class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <!-- Navigation links for different sections/pages of the website -->
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li> <!-- Link to the Home page -->
+    <li><a href="about.html">About Me</a></li> <!-- Link to the About Me page -->
+    <li><a href="future-plans.html" class="future-plans">Vision & Milestones</a></li> <!-- Link to the Vision & Milestones page -->
+    <li class="dropdown">
+      <a href="my-works.html" class="dropbtn">Signature Designs</a> <!-- Link to Signature Designs page with a dropdown menu -->
+      <div class="dropdown-content">
+        <!-- Links to specific projects within the Signature Designs page -->
+        <a href="my-works.html#work2">Underwater</a>
+        <a href="my-works.html#work3">Farm Towers</a>
+        <a href="my-works.html#work4">Architectural Showcase</a>
+      </div>
+    </li>
+    <li><a href="team.html">Team & Press</a></li> <!-- Link to the Team & Press page -->
+    <li><a href="contact.html">Contact</a></li> <!-- Link to the Contact page -->
+    <li><a href="report.html">Report</a></li> <!-- Link to the Report page -->
+  </ul>
+</nav>
+
+<!-- Header Section -->
+<header>
+  <h1>Syed Abdullah Humayun - Portfolio Report</h1> <!-- Main title for the report -->
+</header>
+
+<!-- Introduction Section -->
+<section id="introduction">
+  <h2>Introduction</h2> <!-- Title of the introduction section -->
+  <p>
+    This website showcases my professional portfolio as an architect and computer scientist in the year 2034. I specialize in merging artificial intelligence (AI) with architectural design, creating properties that are not merely structures but intelligent systems. These AI-integrated buildings adapt to their occupants, optimize energy usage, and ensure a sustainable living environment. The portfolio is designed for potential clients, collaborators, and industry professionals, highlighting my journey, key projects, future plans, and the team behind the innovations. The website is structured into five distinct pages, each offering insights into different facets of my professional life and vision.
+  </p>
+  <p><strong>Code References:</strong></p>
+  <ul>
+    <li><strong>HTML Structure:</strong> The use of semantic HTML elements is prevalent across all pages, such as <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code>. For example, in <a href="about.html">about.html</a>, the <code>&lt;section&gt;</code> element is used to encapsulate the main content about my background.</li>
+    <li><strong>CSS for Layout:</strong> The layout is managed using CSS Grid and Flexbox. In <a>my-works.css</a>, Flexbox is used to create a responsive gallery display for my projects, ensuring a consistent and adaptive layout.</li>
+  </ul>
+</section>
+
+<!-- Inspiration Section -->
+<section id="inspiration">
+  <h2>Inspiration</h2> <!-- Title of the inspiration section -->
+  <p>In developing this portfolio, I was inspired by the following professional sites:</p>
+  <ol>
+    <li>
+      <strong>Bjarke Ingels Group (BIG)</strong> - <em>What I Learned:</em> The clean, modern design and innovative use of visuals to communicate complex ideas were key takeaways. This influenced the "Future Plans" section on <a href="future-plans.html">future-plans.html</a>, where visual storytelling is crucial. CSS animations (referenced in <a>future-plans.css</a>, particularly the <code>.flip-card</code> class) were used to create engaging visual effects that reflect my vision for AI in architecture.
+    </li>
+    <li>
+      <strong>Zaha Hadid Architects</strong> - <em>What I Learned:</em> The bold use of animations and interactive elements to engage users inspired the interactive aspects of my site. For instance, the hover effects and expandable sections on <a href="my-works.html">my-works.html</a> are implemented using CSS transitions and keyframes (<code>@keyframes fadeInUp</code> in <a>my-works.css</a>).
+    </li>
+    <li>
+      <strong>Norman Foster Foundation</strong> - <em>What I Learned:</em> The site’s clear navigation and accessibility features were instrumental in guiding my design choices. The navigation across all pages (<code>&lt;nav&gt;</code> elements styled in <a>styles.css</a>) is consistent and user-friendly, ensuring easy access to all sections of the site.
+    </li>
+  </ol>
+  <p><strong>Code References:</strong></p>
+  <ul>
+    <li><strong>Animations:</strong> In <a>my-works.css</a>, the <code>.work-item:hover</code> effect uses CSS transitions to provide smooth visual feedback, inspired by Zaha Hadid Architects' site.</li>
+    <li><strong>Navigation:</strong> The navigation bar, consistent across <a href="about.html">about.html</a>, <a href="contact.html">contact.html</a>, and other pages, is styled in <a>styles.css</a> with responsive adjustments handled through media queries.</li>
+  </ul>
+</section>
+
+<!-- Accessibility Section -->
+<section id="accessibility">
+  <h2>Accessibility</h2> <!-- Title of the accessibility section -->
+  <p>To make the site accessible to a broad audience, including those with different abilities, I implemented the following features:</p>
+  <ul>
+    <li>
+      <strong>Use of ALT Text for Images:</strong> All images on the site include descriptive ALT attributes, such as <code>&lt;img src="images/work1.webp" alt="AI-Powered Urban Planning"&gt;</code> in <a href="my-works.html">my-works.html</a>, ensuring that screen readers can convey the content to visually impaired users.
+    </li>
+    <li>
+      <strong>Keyboard Navigation:</strong> The site can be fully navigated using only a keyboard, with clear focus states on interactive elements like links and buttons. This is achieved through CSS (<code>:focus</code> styles in <a>team.css</a> to enhance keyboard accessibility).
+    </li>
+    <li>
+      <strong>High Contrast and Readable Fonts:</strong> The design employs a high-contrast color scheme and readable fonts to accommodate users with visual impairments. For example, in <a>contact.css</a>, the contrast between background and text colors was carefully chosen (<code>color: #000; background-color: #fff;</code>) to ensure readability.
+    </li>
+  </ul>
+  <p><strong>Code References:</strong></p>
+  <ul>
+    <li><strong>ALT Text:</strong> Example from <a href="my-works.html">my-works.html</a> <code>&lt;img src="images/eco-friendly.webp" alt="Eco-Friendly Earth Shelters"&gt;</code>.</li>
+    <li><strong>Focus States:</strong> In <a>team.css</a>, the <code>:focus</code> pseudo-class is applied to navigation links to ensure they are highlighted when accessed via keyboard.</li>
+    <li><strong>Contrast:</strong> In <a>contact.css</a>, high-contrast styles are used in the contact form (<code>input, textarea { background-color: #fff; color: #000; }</code>).</li>
+  </ul>
+</section>
+
+<!-- Usability Section -->
+<section id="usability">
+  <h2>Usability</h2> <!-- Title of the usability section -->
+  <p>Usability was a core consideration throughout the design and development process, addressed in the following ways:</p>
+  <ul>
+    <li>
+      <strong>Intuitive Navigation:</strong> A consistent navigation bar across all pages ensures users can easily find and access different sections of the site. The navigation bar (<code>&lt;nav&gt;</code> element) is styled in <a>styles.css</a> and dynamically adjusts its layout using media queries for responsiveness.
+    </li>
+    <li>
+      <strong>Responsive Design:</strong> The site is fully responsive, with CSS media queries implemented in all stylesheets (e.g., <code>@media (max-width: 768px)</code> in <a>my-works.css</a>) to ensure the layout adapts smoothly to different screen sizes.
+    </li>
+    <li>
+      <strong>Interactive Elements:</strong> Interactive features, such as hover effects and expandable sections, enhance user engagement. For instance, in <a>future-plans.css</a>, the <code>.flip-card</code> class uses 3D transforms to create a card-flipping effect that illustrates AI-driven future projects.
+    </li>
+  </ul>
+  <p><strong>Code References:</strong></p>
+  <ul>
+    <li><strong>Responsive Design:</strong> Media queries in <a>team.css</a> adjust the layout of team member cards to ensure they are displayed properly on smaller screens.</li>
+    <li><strong>Interactive Elements:</strong> In <a>my-works.css</a>, the <code>.work-item:hover</code> rule provides visual feedback when users hover over project thumbnails.</li>
+  </ul>
+</section>
+
+<!-- Learning Section -->
+<section id="learning">
+  <h2>Learning</h2> <!-- Title of the learning section -->
+  <p>Throughout the development of this site, I had to learn and apply new concepts in the following areas:</p>
+  <ul>
+    <li><strong>Advanced CSS Animations:</strong> I learned how to create CSS animations, such as those used in the "My Works" page (<code>@keyframes fadeInUp</code> in <a>my-works.css</a>), to create dynamic, engaging content that demonstrates AI integration in architecture.</li>
+    <li><strong>JavaScript for Dynamic Content Loading:</strong> I explored JavaScript techniques for dynamic content loading, which are used in <a>my-works.js</a> to load additional project details without reloading the page.</li>
+    <li><strong>Accessibility Best Practices:</strong> I deepened my understanding of accessibility, particularly how to make complex AI concepts understandable for users with disabilities. This included the use of ARIA roles and ensuring keyboard navigability across the site.</li>
+  </ul>
+  <p><strong>Code References:</strong></p>
+  <ul>
+    <li><strong>CSS Animations:</strong> The <code>.fadeInUp</code> animation in <a>my-works.css</a> adds a smooth, upward fade-in effect to content as it enters the viewport.</li>
+    <li><strong>JavaScript:</strong> In <a>my-works.js</a>, the dynamic content loading is handled using event listeners that load project details on demand.</li>
+  </ul>
+</section>
+
+<!-- Evaluation I Section -->
+<section id="evaluation">
+  <h2>Evaluation I: Successful Aspects</h2> <!-- Title of the first evaluation section -->
+  <ul>
+    <li><strong>Integration of AI Concepts:</strong> The site effectively communicates how AI is integrated into architectural design, making complex ideas accessible and engaging. The "Future Plans" page (<a href="future-plans.html">future-plans.html</a>) is particularly successful in this, using a combination of CSS 3D transforms and JavaScript to demonstrate AI's impact on future living spaces.</li>
+    <li><strong>Responsive and Interactive Design:</strong> The website is fully responsive, with interactive elements that enhance user engagement. The responsiveness is particularly evident in the media queries used across the CSS files (<a>team.css</a>, <a>my-works.css</a>), ensuring the site adapts well to various screen sizes.</li>
+    <li><strong>Consistent Aesthetic:</strong> The design aesthetic is consistent across all pages, creating a professional and cohesive look. This is managed through the use of a shared stylesheet (<a>styles.css</a>) that standardizes colors, typography, and layout elements.</li>
+  </ul>
+  <p><strong>Code References:</strong></p>
+  <ul>
+    <li><strong>AI Integration:</strong> The use of CSS 3D transforms in <a>future-plans.css</a> (<code>.flip-card</code>) demonstrates AI-driven innovations in architecture.</li>
+    <li><strong>Responsive Design:</strong> The media queries in <a>team.css</a> ensure the team section is visually consistent across devices.</li>
+  </ul>
+</section>
+
+<!-- Evaluation II Section -->
+<section id="evaluation2">
+  <h2>Evaluation II: Areas for Improvement</h2> <!-- Title of the second evaluation section -->
+  <ul>
+    <li><strong>Advanced JavaScript Features:</strong> Although the JavaScript functions effectively, further exploration of advanced features, such as integrating AI-driven simulations, could enhance the site's interactivity. This could be implemented in <a>future-plans.js</a> with more sophisticated data handling and dynamic updates.</li>
+    <li><strong>Expanded Content on Future Technologies:</strong> Additional content, such as case studies or detailed white papers on AI in architecture, could provide deeper insights for users. These could be integrated into the "Future Plans" section with downloadable PDFs linked from <a href="future-plans.html">future-plans.html</a>.</li>
+    <li><strong>Additional Accessibility Features:</strong> While the site meets accessibility standards, further enhancements, such as voice navigation or more robust ARIA roles, could be implemented. This could be expanded in <a href="about.html">about.html</a> with additional keyboard shortcuts and screen reader-specific cues.</li>
+  </ul>
+  <p><strong>Code References:</strong></p>
+  <ul>
+    <li><strong>JavaScript Features:</strong> Current implementation in <a>my-works.js</a> is effective but could be expanded with more advanced event handling and dynamic content.</li>
+    <li><strong>Accessibility:</strong> Consider expanding the use of ARIA roles in <a href="about.html">about.html</a> to improve screen reader support.</li>
+  </ul>
+</section>
+
+<!-- Resources Section -->
+<section id="resources">
+  <h2>Resources</h2> <!-- Title of the resources section -->
+  <p>In building this website, I utilized the following resources:</p>
+  <ol>
+    <li><strong>Mozilla Developer Network (MDN):</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" target="_blank">CSS Reference</a>, 2023. Accessed: 29-Aug-2024.</li>
+    <li><strong>W3Schools:</strong> <a href="https://www.w3schools.com/js/" target="_blank">JavaScript Tutorial</a>, 2023. Accessed: 29-Aug-2024.</li>
+    <li><strong>FontAwesome:</strong> <a href="https://fontawesome.com" target="_blank">FontAwesome Icons</a>, 2024. Accessed: 29-Aug-2024.</li>
+    <li><strong>Inspiration Websites:</strong> Inspiration from professional portfolio websites as listed in the "Inspiration" section.</li>
+  </ol>
+  <p><strong>Code References:</strong></p>
+  <ul>
+    <li><strong>External Resources:</strong> References to external stylesheets and libraries, such as FontAwesome (<code>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"&gt;</code>), are found in <a href="about.html">about.html</a>, <a href="contact.html">contact.html</a>, and others.</li>
+  </ul>
+</section>
+
+<!-- Appendices Section -->
+<section id="appendices">
+  <h2>Appendices</h2> <!-- Title of the appendices section -->
+  <h3>Wireframes and Mock-ups</h3>
+  <h3>Home Page</h3>
+  <img src="wireframes/wf1.png" alt="Wireframe of Homepage">
+  <img src="wireframes/wf7.png" alt="Wireframe of Homepage">
+
+  <h3>About Page</h3>
+  <img src="wireframes/wf2.png" alt="Wireframe of About">
+  <img src="wireframes/wf8.png" alt="Wireframe of About">
+  <h3>Contact Us Page</h3>
+  <img src="wireframes/wf6.png" alt="Wireframe of Contact Page">
+  <img src="wireframes/wf12.png" alt="Wireframe of Contact">
+  <h3>Plans Page</h3>
+  <img src="wireframes/wf3.png" alt="Wireframe of Plans Page">
+  <img src="wireframes/wf9.png" alt="Wireframe of Plans page">
+  <h3>Works Page</h3>
+  <img src="wireframes/wf4.png" alt="Wireframe of Works Page">
+  <img src="wireframes/wf10.png" alt="Wireframe of Works page">
+  <h3>Teams Page</h3>
+  <img src="wireframes/wf5.png" alt="Wireframe of Teams Page">
+  <img src="wireframes/wf11.png" alt="Wireframe of Teams page">
+
+</section>
+
+<!-- Footer Section -->
+<footer>
+  <div class="footer-container">
+    <!-- About Me section in the footer -->
+    <div class="footer-left">
+      <h3>About Me</h3> <!-- Title for the About Me section -->
+      <p>
+        I'm a passionate web developer and designer, crafting beautiful and functional websites. Connect with me on social media or reach out through the contact form.
+      </p>
+      <!-- Social media links -->
+      <ul class="social-icons">
+        <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
+    <!-- Newsletter subscription section in the footer -->
+    <div class="footer-center">
+      <h3>Subscribe to Newsletter</h3> <!-- Title for the Newsletter subscription -->
+      <form class="newsletter-form" action="#" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required> <!-- Input field for email subscription -->
+        <button type="submit">Subscribe</button> <!-- Subscribe button -->
+      </form>
+    </div>
+    <!-- Contact information section in the footer -->
+    <div class="footer-right">
+      <h3>Contact</h3> <!-- Title for the Contact section -->
+      <p>
+        <strong>Address:</strong><br>
+        87-H Phase 5 DHA Lahore <!-- Address details -->
+      </p>
+      <p>
+        <strong>Email:</strong><br>
+        <a href="mailto:example@example.com">example@example.com</a> <!-- Email link -->
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2034 SAH. All rights reserved.</p> <!-- Copyright information -->
+  </div>
+</footer>
+
+</body>
+</html>

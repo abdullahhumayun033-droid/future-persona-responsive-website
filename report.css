@@ -1,0 +1,407 @@
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif; /* Set the base font family */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    line-height: 1.4; /* Set line height for readability */
+    color: white; /* Set text color to white */
+    position: relative; /* Set relative positioning for body */
+    font-size: 12px; /* Set base font size */
+    background-color: #233554; /* Dark blue background color */
+    background-repeat: no-repeat; /* Prevent background image repetition */
+    background-size: cover; /* Cover entire background area */
+    background-position: center; /* Center the background image */
+}
+
+/* Basic styles for the navigation */
+nav {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+    background-color: #333; /* Dark background color */
+    padding: 10px 20px; /* Padding inside the navigation bar */
+    position: relative; /* Set relative position for z-index */
+    z-index: 10; /* Ensure nav stays on top */
+}
+
+/* Flexbox layout for navigation links */
+nav .nav-links {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the navigation links */
+    font-size: 1.3em; /* Increase font size */
+    flex-grow: 1; /* Allow links to grow and shrink */
+}
+
+/* Individual list items in navigation */
+nav .nav-links li {
+    margin-left: 20px; /* Space between list items */
+    position: relative; /* Relative positioning for dropdowns */
+}
+
+/* Styling for navigation links */
+nav .nav-links li a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Padding inside links */
+    display: inline-block; /* Block-level link */
+    transition: background-color 0.2s ease; /* Smooth background transition on hover */
+}
+
+/* Hover effect for navigation links */
+nav .nav-links li a:hover {
+    background-color: #444; /* Darker background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Specific interaction for the "Future Plans" button with pulse effect */
+nav .future-plans {
+    position: relative; /* Relative positioning for pulse effect */
+    overflow: hidden; /* Hide overflow for pulse */
+    z-index: 2; /* Ensure pulse effect is visible */
+}
+
+/* Pulse effect for the "Future Plans" button */
+nav .future-plans:hover::after {
+    content: ''; /* Pseudo-element for pulse */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%; /* Large size for pulse */
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2); /* Transparent white background */
+    border-radius: 50%; /* Circular shape */
+    transform: translate(-50%, -50%); /* Center the pulse effect */
+    animation: pulse 1.7s ease-out; /* Smooth pulse animation */
+}
+.logo img {
+    width: 250px; /* Adjust the size of the logo */
+    height: 80px;
+}
+.logo-img:hover{
+    transform: scale(1.4);
+}
+/* Keyframes for pulse animation */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.1); /* Start small */
+        background: rgba(155, 255, 105, 1); /* Greenish color */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* Full size */
+        opacity: 1; /* Full opacity */
+    }
+}
+
+/* Dropdown menu for "My Works" */
+.dropdown {
+    position: relative; /* Positioning for dropdown */
+    z-index: 15; /* Ensure dropdown stays on top */
+}
+
+/* Button styling for dropdown */
+.dropdown .dropbtn {
+    background-color: #333; /* Match nav background */
+    border: none; /* Remove border */
+}
+
+/* Hover effect for dropdown button */
+.dropdown:hover .dropbtn {
+    background-color: #555; /* Darker background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Dropdown content styling */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position relative to button */
+    background-color: burlywood; /* Light brown background */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0px 8px 16px 0px rgba(90, 250, 120, 0.4); /* Drop shadow */
+    z-index: 20; /* Ensure content stays on top */
+}
+
+/* Link styling inside dropdown */
+.dropdown-content a {
+    color: black; /* Black text color */
+    padding: 12px 16px; /* Padding inside links */
+    text-decoration: inherit; /* Inherit text decoration */
+    display: block; /* Block-level link */
+}
+
+/* Hover effect for dropdown links */
+.dropdown-content a:hover {
+    background-color: #777; /* Darker background on hover */
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block; /* Display dropdown content */
+    z-index: 20; /* Ensure it stays above other content */
+}
+
+/* Interactive button for "Contact" with underline effect */
+nav .nav-links li:last-child a {
+    position: relative; /* Positioning for underline effect */
+}
+
+/* Underline effect for "Contact" button */
+nav .nav-links li:last-child a::after {
+    content: ''; /* Pseudo-element for underline */
+    position: absolute;
+    width: 0%; /* Start with no underline */
+    height: 2px; /* Thin underline */
+    bottom: -5px; /* Position below text */
+    left: 0;
+    background-color: greenyellow; /* Greenish-yellow color */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+/* Expand underline on hover */
+nav .nav-links li:last-child a:hover::after {
+    width: 100%; /* Full width underline on hover */
+}
+
+/* Footer styling */
+footer {
+    background-color: #222; /* Dark background color */
+    color: #fff; /* White text color */
+    padding: 40px 0; /* Padding inside footer */
+    font-size: 16px; /* Font size */
+    margin-top: 50px; /* Space above footer */
+    position: relative; /* Relative positioning */
+    width: 100%; /* Full width footer */
+    clear: both; /* Clear floats */
+}
+
+/* Flexbox layout for footer */
+.footer-container {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space columns evenly */
+    align-items: flex-start; /* Align items at the top */
+    max-width: 1200px; /* Maximum width for content */
+    margin: 0 auto; /* Center the footer content */
+    padding: 0 20px; /* Padding inside footer */
+    gap: 40px; /* Space between columns */
+}
+
+/* Footer columns styling */
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1; /* Allow columns to grow and shrink */
+    padding: 20px; /* Padding inside columns */
+}
+
+/* Footer heading styling */
+.footer-left h3,
+.footer-center h3,
+.footer-right h3 {
+    font-size: 20px; /* Font size for headings */
+    margin-bottom: 20px; /* Space below headings */
+    color: greenyellow; /* Greenish-yellow color */
+    align-items: center; /* Center align items */
+}
+
+/* Paragraph styling inside footer */
+.footer-left p,
+.footer-right p {
+    margin-bottom: 15px; /* Space below paragraphs */
+    line-height: 1.6; /* Line height for readability */
+    color: #b5b5b5; /* Light gray text color */
+}
+
+/* Social media icons styling */
+.social-icons {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    display: flex; /* Flexbox layout */
+    gap: 15px; /* Space between icons */
+}
+
+/* Individual social icon styling */
+.social-icons li {
+    display: inline-block; /* Inline-block for icons */
+}
+
+/* Link styling for social media icons */
+.social-icons a {
+    color: #fff; /* White icon color */
+    font-size: 18px; /* Font size */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+/* Hover effect for social media icons */
+.social-icons a:hover {
+    color: #00aced; /* Light blue color on hover */
+}
+
+/* Newsletter form styling */
+.newsletter-form {
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack elements vertically */
+    max-width: 300px; /* Limit the width of the form */
+}
+
+/* Input field styling in newsletter form */
+.newsletter-form input[type="email"] {
+    padding: 10px; /* Padding inside input field */
+    margin-bottom: 10px; /* Space below input field */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+}
+
+/* Submit button styling in newsletter form */
+.newsletter-form button {
+    padding: 10px; /* Padding inside button */
+    background-color: #00aced; /* Light blue background color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    color: #fff; /* White text color */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Hover effect for submit button */
+.newsletter-form button:hover {
+    background-color: #008bb9; /* Darker blue background on hover */
+}
+
+/* Footer bottom section styling */
+.footer-bottom {
+    text-align: center; /* Center align text */
+    padding: 20px 0; /* Padding inside bottom section */
+    background-color: #111; /* Darker background for bottom section */
+    color: #b5b5b5; /* Light gray text color */
+    font-size: 14px; /* Smaller font size */
+    margin-top: 20px; /* Space above bottom section */
+    width: 100%; /* Full width */
+    position: absolute; /* Absolute positioning */
+    bottom: 0; /* Align to bottom of page */
+    left: 0; /* Align to left of page */
+}
+
+/* Footer bottom paragraph styling */
+.footer-bottom p {
+    margin: 0; /* Reset default margin */
+}
+
+/* Mobile menu toggle button */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Stack lines vertically */
+    justify-content: space-between; /* Even spacing between lines */
+    width: 30px; /* Width of the toggle */
+    height: 21px; /* Height of the toggle */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Styling for each line in the toggle */
+.menu-toggle span {
+    display: block; /* Block-level element */
+    width: 100%; /* Full width */
+    height: 3px; /* Height of each line */
+    background: white; /* White line color */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    /* Mobile navigation menu */
+    nav .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+        background-color: #333; /* Dark background */
+        position: absolute; /* Absolute positioning */
+        top: 85px; /* Position below the toggle */
+        left: 0; /* Align to left */
+    }
+
+    /* Show navigation menu when open */
+    nav .nav-links.nav-open {
+        display: flex; /* Show the links */
+    }
+
+    /* Styling for individual list items in mobile nav */
+    nav .nav-links li {
+        width: 100%; /* Full width */
+        text-align: center; /* Center align text */
+        margin-left: -40px; /* Adjust margin */
+    }
+
+    /* Styling for links in mobile nav */
+    nav .nav-links li a {
+        padding: 15px 0; /* Padding inside links */
+        width: 100%; /* Full width */
+    }
+
+
+    /* Show hamburger menu toggle on mobile */
+    .menu-toggle {
+        display: flex; /* Display the toggle */
+    }
+
+    /* Footer adjustments for mobile */
+    .footer-container {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center; /* Center align columns */
+        gap: 20px; /* Reduce gap between sections */
+        text-align: center; /* Center align text */
+    }
+
+    /* Footer column adjustments for mobile */
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        padding: 10px; /* Reduce padding */
+        max-width: 100%; /* Full width columns */
+    }
+
+    /* Center social icons on mobile */
+    .social-icons {
+        justify-content: center; /* Center the icons horizontally */
+    }
+
+    /* Footer bottom adjustments for mobile */
+    .footer-bottom {
+        position: relative; /* Allow footer to flow with content */
+        text-align: center; /* Center align text */
+        padding: 20px 0; /* Padding inside bottom section */
+        width: 100%; /* Full width */
+        top: 40px; /* Adjust position relative to content */
+    }
+    #appendices img{
+        width: 100%;
+    }
+}
+
+/* Heading 1 styling */
+h1 {
+    font-size: 35px; /* Large font size */
+    color: greenyellow; /* Greenish-yellow text color */
+    text-align: center; /* Center align text */
+}
+
+/* Heading 2 styling */
+h2 {
+    font-size: 25px; /* Medium font size */
+    color: greenyellow; /* Greenish-yellow text color */
+}
+
+/* Paragraph styling */
+p {
+    font-size: 18px; /* Font size for paragraphs */
+}
+
+/* List item styling */
+li {
+    font-size: 15px; /* Font size for list items */
+}
+
+/* Anchor link styling */
+a {
+    color: #ffcc00; /* Yellow text color for links */
+}

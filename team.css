@@ -1,0 +1,580 @@
+body {
+    font-family: 'Arial', sans-serif; /* Set font family for the entire document */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    line-height: 1.4; /* Set line height for readability */
+    color: #333; /* Set default text color */
+    position: relative; /* Establish positioning context for child elements */
+    font-size: 12px; /* Set base font size */
+    background-color: rgba(100, 149, 237, 1); /* Start with full opacity for the background color */
+    background-repeat: no-repeat; /* Prevent background image repetition */
+    background-size: cover; /* Ensure background image covers entire element */
+    background-position: center; /* Center the background image */
+    transition: background-color 0.5s ease-out; /* Smooth fade transition for background color changes */
+}
+
+.overlay {
+    position: fixed; /* Fix the overlay position relative to the viewport */
+    top: 0; /* Align to the top of the viewport */
+    left: 0; /* Align to the left of the viewport */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay with 80% opacity */
+    pointer-events: none; /* Make the overlay non-interactive */
+    z-index: -1; /* Position behind other content */
+    transition: opacity 0.8s ease-out; /* Smooth fade transition for overlay opacity */
+}
+
+nav {
+    display: flex; /* Flexbox layout for navigation bar */
+    justify-content: space-between; /* Space elements evenly */
+    align-items: center; /* Center align items vertically */
+    background-color: #333; /* Dark background color */
+    padding: 10px 20px; /* Padding around the content */
+    position: relative; /* Position relative to the page */
+    z-index: 10; /* Ensure nav stays above other content */
+}
+
+.menu-toggle {
+    display: none; /* Hide the toggle button by default */
+    flex-direction: column; /* Arrange toggle lines vertically */
+    justify-content: space-between; /* Space lines evenly */
+    width: 30px; /* Set width for toggle button */
+    height: 21px; /* Set height for toggle button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.menu-toggle span {
+    display: block; /* Block display for each line */
+    width: 100%; /* Full width for lines */
+    height: 3px; /* Set height for each line */
+    background: white; /* White color for lines */
+}
+
+.nav-links {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Flexbox layout for links */
+    justify-content: center; /* Center links horizontally */
+    font-size: 1.3em; /* Increase font size */
+    flex-grow: 1; /* Allow links to grow and fill space */
+}
+
+.nav-links li {
+    margin-left: 20px; /* Space between list items */
+    position: relative; /* Position relative to enable pseudo-elements */
+}
+
+.nav-links li a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px 20px; /* Padding inside links */
+    display: inline-block; /* Inline block for clickable area */
+    transition: background-color 0.2s ease; /* Smooth background color transition */
+}
+
+.nav-links li a:hover {
+    background-color: #444; /* Darker background on hover */
+    border-radius: 5px; /* Slightly round corners on hover */
+}
+.logo img {
+    width: 250px; /* Adjust the size of the logo */
+    height: 80px;
+}
+.logo-img:hover{
+    transform: scale(1.4);
+}
+
+.future-plans {
+    position: relative; /* Position relative for hover effect */
+    overflow: hidden; /* Hide overflowing content */
+    z-index: 2; /* Ensure it's above other content */
+}
+
+.future-plans:hover::after {
+    content: ''; /* Create an empty pseudo-element */
+    position: absolute; /* Position relative to the future-plans element */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    width: 200%; /* Expand beyond the element */
+    height: 200%; /* Expand beyond the element */
+    background: rgba(255, 255, 255, 0.2); /* White background with low opacity */
+    border-radius: 50%; /* Make the element circular */
+    transform: translate(-50%, -50%); /* Center the element using transform */
+    animation: pulse 1.7s ease-out; /* Apply the pulse animation */
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.1); /* Start small */
+        background: rgba(155, 255, 105, 1); /* Start with greenish color */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* End at full size */
+        opacity: 1; /* Ensure full opacity */
+    }
+}
+
+.dropdown {
+    position: relative; /* Position relative to parent */
+    z-index: 15; /* Higher z-index to ensure dropdown stays on top */
+}
+
+.dropdown .dropbtn {
+    background-color: #333; /* Dark background for dropdown button */
+    border: none; /* Remove default border */
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #555; /* Lighter background on hover */
+    border-radius: 5px; /* Round corners on hover */
+}
+
+.dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    position: absolute; /* Position relative to dropdown button */
+    background-color: burlywood; /* Light brown background */
+    min-width: 160px; /* Minimum width for dropdown */
+    box-shadow: 0px 8px 16px 0px rgba(90, 250, 120, 0.4); /* Light green shadow */
+    z-index: 20; /* Highest z-index to stay above other content */
+}
+
+.dropdown-content a {
+    color: black; /* Black text color */
+    padding: 12px 16px; /* Padding inside links */
+    text-decoration: inherit; /* Inherit text decoration */
+    display: block; /* Block display for full width click area */
+}
+
+.dropdown-content a:hover {
+    background-color: #777; /* Darker background on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown content on hover */
+    z-index: 20; /* Ensure it stays above other content */
+}
+
+nav .nav-links li:last-child a {
+    position: relative; /* Position relative to enable pseudo-elements */
+}
+
+nav .nav-links li:last-child a::after {
+    content: ''; /* Create an empty pseudo-element */
+    position: absolute; /* Position relative to the link */
+    width: 0%; /* Start with no width */
+    height: 2px; /* Set height for underline */
+    bottom: -5px; /* Position below the text */
+    left: 0; /* Start from the left */
+    background-color: greenyellow; /* Light green underline */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+nav .nav-links li:last-child a:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+
+.team-section {
+    padding: 100px 20px; /* Padding around the section */
+    text-align: center; /* Center align text */
+}
+
+.team-section h1 {
+    font-size: 5em; /* Large font size for heading */
+    color: greenyellow; /* Greenish-yellow text color */
+}
+
+.team-container {
+    display: flex; /* Flexbox layout for team cards */
+    justify-content: center; /* Center align team cards */
+    gap: 20px; /* Space between cards */
+    flex-wrap: wrap; /* Wrap cards on smaller screens */
+    margin-top: 40px; /* Space above container */
+}
+
+.team-card {
+    background-color: #0D4A7E; /* Dark blue background color */
+    padding: 20px; /* Padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    width: 300px; /* Fixed width for cards */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+    transform: translateY(50px); /* Start position for animation */
+    opacity: 0; /* Start with hidden card */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition */
+    animation: fadeInUp 1s forwards; /* Apply fadeInUp animation */
+    position: relative; /* Position relative to enable hover effects */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.team-card:hover {
+    background-color: #088EDC; /* Light blue background on hover */
+}
+
+.team-card img {
+    width: 100%; /* Full width image */
+    border-radius: 10px; /* Rounded corners for images */
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Cover the entire image area */
+}
+
+.team-card h2 {
+    font-size: 24px; /* Font size for names */
+    margin: 15px 0; /* Space above and below name */
+    color: #FFF; /* White text color */
+}
+
+.team-card p {
+    font-size: 16px; /* Font size for description */
+    color: #DDD; /* Light gray text color */
+}
+
+.arrow {
+    color: #FFD700; /* Gold color for arrow */
+    font-size: 24px; /* Large font size */
+    text-decoration: none; /* Remove underline */
+    position: absolute; /* Position relative to the card */
+    bottom: 10px; /* Position near the bottom */
+    right: 10px; /* Position near the right edge */
+    transition: transform 0.3s ease; /* Smooth transform transition */
+}
+
+.arrow:hover {
+    transform: scale(1.3); /* Increase size on hover */
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px); /* Start below the original position */
+        opacity: 0; /* Start with hidden element */
+    }
+    to {
+        transform: translateY(0); /* End at original position */
+        opacity: 1; /* End fully visible */
+    }
+}
+
+.media-section {
+    padding: 120px 20px 60px 20px; /* Padding around the section */
+    max-width: 1200px; /* Maximum width for media section */
+    margin: 0 auto; /* Center the section horizontally */
+}
+
+.media-section h1 {
+    font-size: 36px; /* Font size for media heading */
+    text-align: left; /* Align text to the left */
+    color: black; /* Black text color */
+}
+
+.featured-media {
+    display: flex; /* Flexbox layout for featured media */
+    gap: 20px; /* Space between media items */
+    margin-bottom: 40px; /* Space below the section */
+}
+
+.featured-media h1 {
+    font-size: 5em; /* Large font size for media heading */
+    color: greenyellow; /* Greenish-yellow text color */
+    text-align: center; /* Center align heading */
+    margin-left: 650px; /* Space to the left */
+}
+
+.featured-video {
+    position: relative; /* Position relative to enable overlay */
+    width: 50%; /* Half the width of the container */
+}
+
+.featured-video img {
+    width: 100%; /* Full width image */
+    border-radius: 10px; /* Rounded corners for images */
+}
+
+.play-button {
+    position: absolute; /* Position relative to video */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center using transform */
+    font-size: 50px; /* Large font size for play button */
+    color: #fff; /* White color */
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background with 50% opacity */
+    border-radius: 50%; /* Circular shape */
+    padding: 20px; /* Padding inside the button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.featured-details {
+    width: 50%; /* Half the width of the container */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+}
+
+.featured-details h2 {
+    font-size: 28px; /* Font size for subheading */
+    color: orangered; /* Orange-red text color */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.featured-details p {
+    font-size: 16px; /* Font size for description */
+    color: greenyellow; /* Greenish-yellow text color */
+}
+
+.previous-works h3 {
+    font-size: 5em; /* Large font size for heading */
+    color: greenyellow; /* Greenish-yellow text color */
+    margin-bottom: 20px; /* Space below heading */
+    text-align: center; /* Center align heading */
+}
+
+.media-grid {
+    display: grid; /* Grid layout for media items */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid with minimum width */
+    gap: 20px; /* Space between grid items */
+}
+
+.media-item {
+    background-color: #fff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center align text */
+    padding: 10px; /* Padding inside the item */
+    transition: transform 0.3s ease; /* Smooth transform transition */
+}
+
+.media-item:hover {
+    transform: translateY(-5px); /* Slightly lift item on hover */
+}
+
+.media-item img {
+    width: 100%; /* Full width image */
+    border-radius: 10px; /* Rounded corners for images */
+}
+
+.media-item h4 {
+    font-size: 18px; /* Font size for title */
+    color: #333; /* Dark text color */
+    margin: 10px 0; /* Space above and below title */
+}
+
+.media-item p {
+    font-size: 14px; /* Font size for description */
+    color: #999; /* Light gray text color */
+}
+
+/* Footer */
+footer {
+    background-color: #222; /* Dark background color */
+    color: #fff; /* White text color */
+    padding: 40px 0; /* Padding around the footer */
+    font-size: 16px; /* Font size for footer text */
+    margin-top: 50px; /* Space above the footer */
+    position: relative; /* Position relative to content */
+    width: 100%; /* Full width footer */
+    clear: both; /* Clear floats */
+}
+
+.footer-container {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space items evenly */
+    align-items: flex-start; /* Align items to the top */
+    max-width: 1200px; /* Maximum width for footer */
+    margin: 0 auto; /* Center footer horizontally */
+    padding: 0 20px; /* Padding inside the container */
+    gap: 40px; /* Add spacing between the columns */
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1; /* Flex-grow each column equally */
+    padding: 20px; /* Padding inside each column */
+}
+
+.footer-left h3,
+.footer-center h3,
+.footer-right h3 {
+    font-size: 20px; /* Font size for footer headings */
+    margin-bottom: 20px; /* Space below headings */
+    color: greenyellow; /* Greenish-yellow text color */
+    align-items: center; /* Center align text */
+}
+
+.footer-left p,
+.footer-right p {
+    margin-bottom: 15px; /* Space below paragraphs */
+    line-height: 1.6; /* Line height for readability */
+    color: #b5b5b5; /* Light gray text color */
+}
+
+.social-icons {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    display: flex; /* Flexbox layout for icons */
+    gap: 15px; /* Space between icons */
+}
+
+.social-icons li {
+    display: inline-block; /* Inline block for icons */
+}
+
+.social-icons a {
+    color: #fff; /* White icon color */
+    font-size: 18px; /* Font size for icons */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.social-icons a:hover {
+    color: #00aced; /* Light blue color on hover */
+}
+
+.newsletter-form {
+    display: flex; /* Flexbox layout for form */
+    flex-direction: column; /* Stack form elements vertically */
+    max-width: 300px; /* Limit the width of the form */
+}
+
+.newsletter-form input[type="email"] {
+    padding: 10px; /* Padding inside input field */
+    margin-bottom: 10px; /* Space below input field */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size for input text */
+}
+
+.newsletter-form button {
+    padding: 10px; /* Padding inside button */
+    background-color: #00aced; /* Light blue background color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    color: #fff; /* White text color */
+    font-size: 16px; /* Font size for button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.newsletter-form button:hover {
+    background-color: #008bb9; /* Darker blue background on hover */
+}
+
+.footer-bottom {
+    text-align: center; /* Center align text */
+    padding: 20px 0; /* Padding around the footer */
+    background-color: #111; /* Dark background color */
+    color: #b5b5b5; /* Light gray text color */
+    font-size: 14px; /* Font size for bottom text */
+    margin-top: 20px; /* Space above the bottom section */
+    width: 100%; /* Full width for bottom section */
+    position: absolute; /* Position relative to content */
+    bottom: 0; /* Align to the bottom */
+    left: 0; /* Align to the left */
+}
+
+.footer-bottom p {
+    margin: 0; /* Remove default margin */
+}
+
+/* Mobile menu toggle button */
+.menu-toggle {
+    display: none; /* Hide toggle button by default */
+    flex-direction: column; /* Arrange toggle lines vertically */
+    justify-content: space-between; /* Space lines evenly */
+    width: 30px; /* Width of toggle button */
+    height: 21px; /* Height of toggle button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.menu-toggle span {
+    display: block; /* Block display for lines */
+    width: 100%; /* Full width for lines */
+    height: 3px; /* Height for lines */
+    background: white; /* White color for lines */
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+        background-color: #333; /* Dark background */
+        position: absolute; /* Absolute positioning */
+        top: 85px; /* Position below the toggle */
+        left: 0; /* Align to left */
+    }
+
+    nav .nav-links.nav-open {
+        display: flex; /* Show nav links when open */
+    }
+
+    nav .nav-links li {
+        width: 100%; /* Full width for list items */
+        text-align: center; /* Center align text */
+        margin-left: -40px; /* Adjust margin for mobile */
+    }
+
+    nav .nav-links li a {
+        padding: 15px 0; /* Padding inside links */
+        width: 100%; /* Full width for links */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show toggle button on mobile */
+    }
+
+    .featured-media h1 {
+        margin-left: 200px; /* Adjust heading position for mobile */
+    }
+
+    .featured-details {
+        margin-top: 120px; /* Adjust margin for mobile */
+    }
+}
+
+/* Responsive design for footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center; /* Center align items */
+        gap: 20px; /* Space between columns */
+        text-align: center; /* Center align text */
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        padding: 10px; /* Padding inside columns */
+        max-width: 100%; /* Full width for columns */
+    }
+
+    .social-icons {
+        justify-content: center; /* Center align icons */
+    }
+
+    .newsletter-form {
+        width: 100%; /* Full width for form */
+        display: flex; /* Flexbox layout for form */
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: center; /* Center align form elements */
+    }
+
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        width: 80%; /* Full width for input and button */
+        max-width: 300px; /* Limit width on mobile */
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    .footer-bottom {
+        position: relative; /* Allow footer to flow with content */
+        text-align: center; /* Center align text */
+        padding: 20px 0; /* Padding around the bottom section */
+        width: 100%; /* Full width for bottom section */
+        top: 40px; /* Position relative to content */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .featured-media h1 {
+        margin-left: 300px; /* Adjust heading position for tablets */
+    }
+}

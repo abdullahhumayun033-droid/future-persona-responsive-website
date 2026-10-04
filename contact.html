@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Character encoding set to UTF-8 for proper rendering of text -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper rendering and touch zooming on mobile devices -->
+    <title>Contact | Future Persona</title> <!-- Title of the webpage -->
+    <link rel="stylesheet" href="contact.css"> <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Link to FontAwesome for icon usage -->
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav>
+    <!-- Logo Section -->
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/logobg.png" alt="Logo" class="logo-img">
+        </a>
+    </div>
+    <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <!-- Navigation links for different pages of the website -->
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li> <!-- Link to the Home page -->
+        <li><a href="about.html">About Me</a></li> <!-- Link to the About Me page -->
+        <li><a href="future-plans.html" class="future-plans">Vision & Milestones</a></li> <!-- Link to the Vision & Milestones page -->
+        <li class="dropdown">
+            <a href="my-works.html" class="dropbtn">Signature Designs</a> <!-- Link to the Signature Designs page with a dropdown menu -->
+            <div class="dropdown-content">
+                <!-- Links to specific sections within the Signature Designs page -->
+                <a href="my-works.html#work2">Underwater</a>
+                <a href="my-works.html#work3">Farm Towers</a>
+                <a href="my-works.html#work4">Architectural Showcase</a>
+            </div>
+        </li>
+        <li><a href="team.html">Team & Press</a></li> <!-- Link to the Team & Press page -->
+        <li><a href="contact.html">Contact</a></li> <!-- Link to the Contact page -->
+        <li><a href="report.html">Report</a></li> <!-- Link to the Report page -->
+    </ul>
+</nav>
+
+<main>
+    <!-- Hero section for the Contact page -->
+    <section class="contact-hero fade-in">
+        <h1>Contact Us</h1> <!-- Main heading for the Contact page -->
+        <p>Let's build something amazing together.</p> <!-- Subheading or tagline -->
+    </section>
+
+    <!-- Contact Information section -->
+    <section class="contact-info fade-in">
+        <div class="info-box">
+            <!-- Location information -->
+            <div class="info-item" id="location">
+                <h2>Our Location</h2> <!-- Heading for location details -->
+                <p>123 Architecture Ave, Suite 100, Lahore, Pakistan</p> <!-- Address details -->
+            </div>
+            <!-- Business hours information -->
+            <div class="info-item" id="hours">
+                <h2>Business Hours</h2> <!-- Heading for business hours -->
+                <p>Mon - Fri: 9 AM - 6 PM</p> <!-- Weekday business hours -->
+                <p>Sat - Sun: Closed</p> <!-- Weekend business hours -->
+            </div>
+            <!-- Contact details information -->
+            <div class="info-item" id="contact">
+                <h2>Contact Details</h2> <!-- Heading for contact details -->
+                <p>Email: contact@architectstudio.com</p> <!-- Email address -->
+                <p>Phone: (042) 456-7890</p> <!-- Phone number -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form section -->
+    <section class="contact-form fade-in">
+        <h2>Get in Touch</h2> <!-- Heading for the contact form -->
+        <form id="contactForm">
+            <!-- Form group for Name input -->
+            <div class="form-group">
+                <label for="name">Name</label> <!-- Label for Name input field -->
+                <input type="text" id="name" name="name" required> <!-- Input field for Name -->
+            </div>
+            <!-- Form group for Email input -->
+            <div class="form-group">
+                <label for="email">Email</label> <!-- Label for Email input field -->
+                <input type="email" id="email" name="email" required> <!-- Input field for Email -->
+            </div>
+            <!-- Form group for Message input -->
+            <div class="form-group">
+                <label for="message">Message</label> <!-- Label for Message textarea -->
+                <textarea id="message" name="message" rows="5" required></textarea> <!-- Textarea for Message -->
+            </div>
+            <button type="submit">Send Message</button> <!-- Submit button for the form -->
+        </form>
+    </section>
+
+    <!-- Frequently Asked Questions section -->
+    <section class="faq-section fade-in">
+        <h2>Frequently Asked Questions</h2> <!-- Heading for FAQ section -->
+        <div class="faq-container">
+            <!-- FAQ item about services offered -->
+            <div class="faq-item">
+                <h3>What services do you offer?</h3>
+                <p>We offer a wide range of architectural services including design, planning, project management, and consultation for both residential and commercial projects.</p>
+            </div>
+            <!-- FAQ item about design philosophy -->
+            <div class="faq-item">
+                <h3>What is your design philosophy?</h3>
+                <p>Our design philosophy centers around sustainability, innovation, and creating spaces that are both functional and aesthetically pleasing.</p>
+            </div>
+            <!-- FAQ item about project timelines -->
+            <div class="faq-item">
+                <h3>How long does a typical project take?</h3>
+                <p>The timeline for a project depends on its scope and complexity. We work closely with our clients to establish realistic timelines and ensure timely delivery.</p>
+            </div>
+            <!-- FAQ item about working within budget -->
+            <div class="faq-item">
+                <h3>Can you work within my budget?</h3>
+                <p>Yes, we can tailor our services to fit your budget while still maintaining high standards of quality and design excellence.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer section -->
+<footer>
+    <div class="footer-container">
+        <!-- About Me section in the footer -->
+        <div class="footer-left">
+            <h3>About Me</h3> <!-- Heading for the About Me section -->
+            <p>
+                I'm a passionate web developer and designer, crafting beautiful and functional websites. Connect with me on social media or reach out through the contact form.
+            </p>
+            <!-- Social media icons -->
+            <ul class="social-icons">
+                <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li> <!-- Facebook link -->
+                <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li> <!-- Twitter link -->
+                <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></li> <!-- LinkedIn link -->
+                <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li> <!-- Instagram link -->
+            </ul>
+        </div>
+        <!-- Newsletter subscription section in the footer -->
+        <div class="footer-center">
+            <h3>Subscribe to Newsletter</h3> <!-- Heading for the newsletter subscription -->
+            <form class="newsletter-form" action="#" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" required> <!-- Input field for email subscription -->
+                <button type="submit">Subscribe</button> <!-- Subscribe button -->
+            </form>
+        </div>
+        <!-- Contact information section in the footer -->
+        <div class="footer-right">
+            <h3>Contact</h3> <!-- Heading for the contact section -->
+            <p>
+                <strong>Address:</strong><br>
+                87-H Phase 5 DHA Lahore
+            </p>
+            <p>
+                <strong>Email:</strong><br>
+                <a href="mailto:example@example.com">example@example.com</a> <!-- Email address link -->
+            </p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2034 SAH. All rights reserved.</p> <!-- Copyright information -->
+    </div>
+</footer>
+
+<script src="contact.js"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>

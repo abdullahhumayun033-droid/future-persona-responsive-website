@@ -1,0 +1,961 @@
+/* Main styling for the webpage's body, including font, background, and basic layout */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    color: #333;
+    position: relative;
+    font-size: 12px;
+    background-color: rgba(100, 149, 237, 1); /* Cornflower blue background */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background-color 0.5s ease-out; /* Smooth background color transition */
+}
+
+/* Dark overlay covering the entire viewport, used for background effects */
+.overlay {
+    position: fixed; /* Fixed positioning to cover the entire screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black tint with opacity */
+    pointer-events: none; /* Allows interaction with underlying content */
+    z-index: -1; /* Stacks behind other elements */
+    transition: opacity 0.8s ease-out; /* Smooth opacity transition */
+}
+
+/* Navigation bar styling */
+nav {
+    display: flex; /* Flexbox layout for horizontal alignment */
+    justify-content: space-between; /* Space between logo/links */
+    align-items: center; /* Vertically centers navigation items */
+    background-color: #333; /* Dark background for the navbar */
+    padding: 10px 20px; /* Padding inside the navbar */
+    position: relative;
+    z-index: 10; /* Ensures navbar stays on top */
+}
+
+/* Styling for the navigation links container */
+nav .nav-links {
+    list-style: none; /* Removes bullet points from list items */
+    display: flex; /* Flexbox for horizontal alignment of links */
+    justify-content: center; /* Centers the links */
+    font-size: 1.3em; /* Increases link font size */
+    flex-grow: 1; /* Links take up available space */
+}
+
+/* Individual navigation items */
+nav .nav-links li {
+    margin-left: 20px; /* Space between each navigation item */
+    position: relative;
+}
+
+/* Styling for navigation links */
+nav .nav-links li a {
+    color: #fff;
+    text-decoration: none; /* Removes underline from links */
+    padding: 10px 20px; /* Padding inside each link */
+    display: inline-block; /* Allows padding/margin to be applied */
+    transition: background-color 0.2s ease; /* Smooth hover effect transition */
+}
+
+/* Hover effect for navigation links */
+nav .nav-links li a:hover {
+    background-color: #444; /* Darker background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Specific interaction for the "Future Plans" button with pulse effect */
+nav .future-plans {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+/* Pulse animation on hover for "Future Plans" */
+nav .future-plans:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 1.7s ease-out;
+}
+.logo img {
+    width: 250px; /* Adjust the size of the logo */
+    height: 80px;
+}
+.logo-img:hover{
+    transform: scale(1.4);
+}
+/* Pulse animation keyframes */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.1);
+        background: rgba(155, 255, 105, 1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Dropdown menu for "My Works" */
+.dropdown {
+    position: relative;
+    z-index: 15; /* Ensures dropdown stays on top */
+}
+
+/* Button styling in dropdown */
+.dropdown .dropbtn {
+    background-color: #333;
+    border: none;
+}
+
+/* Hover effect for dropdown button */
+.dropdown:hover .dropbtn {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Dropdown content hidden by default */
+.dropdown-content {
+    display: none; /* Hidden until hovered */
+    position: absolute;
+    background-color: burlywood; /* Light brown background */
+    min-width: 160px; /* Minimum width for the dropdown */
+    box-shadow: 0px 8px 16px 0px rgba(90, 250, 120, 0.4); /* Soft shadow for dropdown */
+    z-index: 20; /* Ensures dropdown content stays on top */
+}
+
+/* Individual items in the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: inherit;
+    display: block; /* Makes the links block-level elements */
+}
+
+/* Hover effect for dropdown items */
+.dropdown-content a:hover {
+    background-color: #777;
+}
+
+/* Show dropdown content on hover */
+.dropdown:hover .dropdown-content {
+    display: block; /* Makes the dropdown visible */
+    z-index: 20; /* Ensures it stays above other content */
+}
+
+/* Interactive button for "Contact" with underline effect */
+nav .nav-links li:last-child a {
+    position: relative;
+}
+
+/* Underline animation for the "Contact" button */
+nav .nav-links li:last-child a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: greenyellow;
+    transition: width 1s ease; /* Smooth underline expansion */
+}
+
+/* Expands underline on hover */
+nav .nav-links li:last-child a:hover::after {
+    width: 100%;
+}
+
+/* Blog Section */
+.blog-section {
+    display: flex; /* Flexbox layout to center content */
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px;
+    transition: transform 0.5s ease; /* Smooth scaling effect on hover */
+    z-index: 2;
+    margin-top: 50px;
+}
+
+/* Scaling effect on hover for the blog section */
+.blog-section:hover {
+    transform: scale(1.08);
+}
+
+/* Blog container styling */
+.blog-container {
+    display: flex; /* Flexbox layout for image and content alignment */
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #444444; /* Dark grey background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden;
+    max-height: 600px;
+}
+
+/* Image section in the blog */
+.blog-image {
+    flex: 2; /* Takes up twice as much space as content */
+    max-width: 100%;
+}
+
+/* Ensures image covers the allocated space */
+.blog-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Content section in the blog */
+.blog-content {
+    flex: 2; /* Equal space with image */
+    padding: 20px 15px;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+/* Blog content header */
+.blog-content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Blog content paragraph */
+.blog-content p {
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Bio Section */
+.bio-section {
+    display: flex; /* Flexbox layout for centering */
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    transition: transform 0.5s ease; /* Smooth scaling on hover */
+    z-index: 2;
+    max-height: 900px;
+    margin-top: 200px;
+}
+
+/* Bio container styling */
+.bio-container {
+    display: flex; /* Flexbox layout for image and content */
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden;
+    background-color: #444444; /* Dark grey background */
+}
+
+/* Container for bio images */
+.bio-images {
+    flex: 1; /* Takes up half the space */
+    max-width: 50%;
+    display: flex; /* Flexbox layout for image alignment */
+    flex-direction: column;
+    gap: 10px; /* Space between images */
+}
+
+/* Individual bio image styling */
+.bio-image {
+    width: 100%;
+    max-width: 450px;
+    max-height: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px; /* Slight rounding of image corners */
+}
+
+/* Bio text container */
+.bio-text {
+    flex: 2; /* Takes up more space for text */
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+/* Bio section header */
+.bio-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Bio section subheader */
+.bio-text h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: greenyellow;
+}
+
+/* Bio section paragraphs */
+.bio-text p {
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Flip Cards Section */
+.flip-cards-section {
+    display: flex; /* Flexbox layout for card alignment */
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    margin-top: 50px;
+    z-index: 1;
+}
+
+/* Flip card container */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 280px;
+    perspective: 1000px; /* Perspective for 3D flip effect */
+    z-index: 1;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    animation: throb 1.5s infinite; /* Throbbing animation for emphasis */
+}
+
+/* Inner content of the flip card */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    text-align: center;
+    transition: transform 0.8s; /* Smooth rotation transition */
+    transform-style: preserve-3d; /* Enables 3D effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+/* Rotate card on hover */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); /* 180-degree rotation */
+}
+
+/* Front and back of the flip card */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back face when rotated */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Image on the front of the flip card */
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Back of the flip card */
+.flip-card-back {
+    background-color: #333; /* Dark background for contrast */
+    color: white;
+    transform: rotateY(180deg); /* Rotated for the back view */
+    display: flex; /* Flexbox for centering content */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* Title on the back of the flip card */
+.flip-card-back h2 {
+    font-size: 1em;
+}
+
+/* Link on the back of the flip card */
+.flip-card-back h2 a {
+    text-decoration: none; /* Removes underline */
+    color: white;
+}
+
+/* Hover effect for the link on the flip card */
+.flip-card-back h2 a:hover {
+    color: #64FFDA; /* Changes link color on hover */
+}
+
+/* Throbbing animation for the flip cards */
+@keyframes throb {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Grows slightly at the midpoint */
+    }
+}
+
+/* Footer styling */
+footer {
+    background-color: #222; /* Dark footer background */
+    color: #fff; /* White text for contrast */
+    padding: 40px 0; /* Space around the footer content */
+    font-size: 16px;
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    clear: both; /* Ensures footer clears floated content */
+}
+
+/* Footer container with columns */
+.footer-container {
+    display: flex; /* Flexbox layout for columns */
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the footer container */
+    padding: 0 20px;
+    gap: 40px; /* Space between the columns */
+}
+
+/* Individual columns in the footer */
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Footer section titles */
+.footer-left h3,
+.footer-center h3,
+.footer-right h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: greenyellow; /* Bright green-yellow color */
+    align-items: center;
+}
+
+/* Footer paragraph text */
+.footer-left p,
+.footer-right p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #b5b5b5; /* Light grey text color */
+}
+
+/* Social media icons in the footer */
+.social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Flexbox layout for icons */
+    gap: 15px; /* Space between the icons */
+}
+
+/* Individual social media icon */
+.social-icons li {
+    display: inline-block;
+}
+
+/* Links for social media icons */
+.social-icons a {
+    color: #fff; /* White color for the icons */
+    font-size: 18px;
+    text-decoration: none; /* Removes underline */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+/* Hover effect for social media icons */
+.social-icons a:hover {
+    color: #00aced; /* Changes icon color on hover */
+}
+
+/* Newsletter subscription form styling */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px; /* Limits form width */
+}
+
+/* Email input field in the newsletter form */
+.newsletter-form input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Submit button in the newsletter form */
+.newsletter-form button {
+    padding: 10px;
+    background-color: #00aced; /* Bright blue submit button */
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer; /* Pointer cursor for button */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Hover effect for the submit button */
+.newsletter-form button:hover {
+    background-color: #008bb9; /* Darker blue on hover */
+}
+
+/* Footer bottom section */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #111; /* Very dark background */
+    color: #b5b5b5; /* Light grey text */
+    font-size: 14px;
+    margin-top: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Footer bottom paragraph */
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Slide-in animations for sections */
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-100%); /* Starts off-screen to the left */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth slide-in effect */
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(100%); /* Starts off-screen to the right */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth slide-in effect */
+}
+
+/* Class to make elements visible */
+.visible {
+    opacity: 1;
+    transform: translateX(0); /* Resets the position */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 1200px) {
+    .blog-content {
+        font-size: 14px;
+    }
+
+    .blog-content h1 {
+        font-size: 20px;
+    }
+
+    .flip-card {
+        width: 280px;
+        height: 240px;
+    }
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    nav .nav-links {
+        font-size: 14px;
+    }
+
+    /* Blog Section Adjustments */
+    .blog-container {
+        position: relative;
+        flex-direction: column; /* Stacks image and content */
+        height: 500px;
+    }
+
+    .blog-image img {
+        width: 150%; /* Larger image width */
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+    }
+
+    .blog-content {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 10px;
+        font-size: 12px;
+        background-color: rgba(0, 0, 0, 0.5); /* Dark background for readability */
+        color: white;
+        width: 80%;
+        border-radius: 10px;
+    }
+
+    .bio-section {
+        margin-top: 700px;
+    }
+
+    .bio-container {
+        flex-direction: column; /* Stacks images and text */
+        align-items: center;
+        padding: 15px;
+    }
+
+    .bio-images {
+        display: flex;
+        flex-direction: row; /* Aligns images in a row */
+        justify-content: space-between;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .bio-image {
+        width: calc(50% - 10px); /* Each image takes up half the width */
+        height: 300px; /* Fixed height for images */
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .bio-text {
+        padding: 15px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .flip-cards-section {
+        flex-direction: column; /* Stacks flip cards vertically */
+    }
+
+    .flip-card {
+        width: 220px;
+        height: 180px;
+    }
+
+    .flip-card-back {
+        font-size: 10px;
+    }
+}
+
+/* Tablet responsive styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    nav .nav-links {
+        font-size: 16px;
+    }
+
+    .flip-cards-section {
+        flex-direction: row; /* Aligns flip cards in a row */
+        justify-content: space-between;
+        margin-top: 50px;
+        gap: 10px;
+    }
+
+    .flip-card {
+        width: 260px;
+        height: 220px;
+    }
+
+    .flip-card-back {
+        font-size: 12px;
+    }
+}
+
+/* Mobile menu toggle button */
+.menu-toggle {
+    display: none;
+    flex-direction: column; /* Vertical alignment for menu lines */
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: white;
+}
+
+/* Mobile view styles for the navigation */
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stacked links */
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 25px;
+        left: 0;
+    }
+
+    nav .nav-links.nav-open {
+        display: flex; /* Shown when open */
+    }
+
+    nav .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin-left: -40px;
+    }
+
+    nav .nav-links li a {
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: flex; /* Shows the toggle button on mobile */
+    }
+}
+
+/* Responsive design for smaller screens in the footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stacks footer sections */
+        align-items: center;
+        gap: 20px; /* Smaller gap between sections */
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .social-icons {
+        justify-content: center; /* Centers the icons */
+    }
+
+    .newsletter-form {
+        width: 100%; /* Full width on mobile */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        width: 80%; /* Makes input and button the same width */
+        max-width: 300px;
+        box-sizing: border-box; /* Includes padding in width calculation */
+    }
+
+    .footer-bottom {
+        position: relative; /* Allows footer to flow with content */
+        text-align: center;
+        padding: 20px 0;
+        width: 100%;
+        top: 40px;
+    }
+}
+
+/* Reviews section */
+.reviews-section {
+    text-align: center;
+    padding: 50px 0;
+    margin-top: 150px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: greenyellow;
+}
+
+/* Container for reviews with slider */
+.reviews-container {
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+}
+
+/* Slider for reviews */
+.reviews-slider {
+    display: flex; /* Flexbox for sliding effect */
+    transition: transform 0.5s ease-in-out; /* Smooth slide transition */
+}
+
+/* Individual review cards */
+.review-card {
+    min-width: 250px;
+    max-width: 300px;
+    margin: 0 15px;
+    background: linear-gradient(to bottom, lightskyblue, grey);
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    text-align: left;
+    padding: 20px;
+    transition: transform 0.3s; /* Smooth scale transition on hover */
+}
+
+/* Hover effect for review cards */
+.review-card:hover {
+    transform: translateY(-10px); /* Lifts the card up */
+}
+
+/* Reviewer image */
+.reviewer-img {
+    border-radius: 50%; /* Circular image */
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+/* Content inside the review card */
+.review-content {
+    color: #333;
+}
+
+/* Reviewer name */
+.reviewer-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Reviewer role */
+.reviewer-role {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Review text */
+.review-text {
+    font-size: 1.1rem;
+    color: #ff0066;
+    margin: 10px 0;
+}
+
+/* Review description */
+.review-description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Review rating */
+.review-rating {
+    font-size: 1.1rem;
+    color: #ffcc00;
+}
+
+/* Slider controls */
+.slider-control {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer; /* Pointer cursor */
+    border-radius: 50%;
+    font-size: 1.5rem;
+    opacity: 0.5;
+    transition: opacity 0.3s; /* Smooth transition for opacity */
+}
+
+/* Hover effect for slider controls */
+.slider-control:hover {
+    opacity: 1;
+}
+
+/* Positioning of previous button */
+.prev {
+    left: 10px;
+}
+
+/* Positioning of next button */
+.next {
+    right: 10px;
+}
+
+/* Responsive styles for the reviews section on smaller screens */
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+        background-color: #333; /* Dark background */
+        position: absolute; /* Absolute positioning */
+        top: 85px; /* Position below the toggle */
+        left: 0; /* Align to left */
+    }
+    .reviews-section {
+        margin-top: 650px;
+    }
+
+    .slider-control {
+        top: 61%;
+    }
+
+    .reviews-slider {
+        flex-wrap: nowrap;
+    }
+
+    .review-card {
+        min-width: 200px;
+        margin: 0 10px;
+    }
+}
+
+/* Tablet Responsive styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bio-section {
+        margin-top: 450px;
+    }
+
+    .reviews-section {
+        margin-top: 400px; /* Adjusted margin for tablet screens */
+    }
+
+    .slider-control {
+        top: 72%; /* Adjust the position of the slider control */
+    }
+
+    .reviews-slider {
+        flex-wrap: nowrap;
+    }
+
+    .review-card {
+        min-width: 250px; /* Slightly wider cards for better readability on tablets */
+        margin: 0 15px; /* Adjusted margin to give more space between cards */
+    }
+
+    .review-card img {
+        max-width: 100px; /* Adjust image size for tablet screens */
+    }
+
+    .review-content {
+        padding: 15px; /* Adjust padding for better layout on tablets */
+    }
+
+    .review-content h3 {
+        font-size: 1.2rem; /* Adjust font size for better readability on tablets */
+    }
+
+    .review-content p {
+        font-size: 1rem; /* Slightly larger font size for better readability */
+    }
+
+    .review-rating {
+        font-size: 1.2rem; /* Adjust rating size to match overall scale */
+    }
+}

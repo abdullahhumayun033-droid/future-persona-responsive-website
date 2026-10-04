@@ -1,0 +1,989 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif; /* Font styling */
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+    line-height: 1.4; /* Line height for readability */
+    color: #333; /* Default text color */
+    position: relative; /* For positioning child elements */
+    font-size: 12px; /* Base font size */
+    background-color: rgba(100, 149, 237, 1); /* Start with full opacity background */
+    background-repeat: no-repeat; /* Prevent background image repetition */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    transition: background-color 0.5s ease-out; /* Smooth fade transition on background color change */
+}
+
+/* Overlay Effect */
+.overlay {
+    position: fixed; /* Fix position to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay for tint effect */
+    pointer-events: none; /* Allow interactions with underlying content */
+    z-index: -1; /* Place overlay behind other content */
+    transition: opacity 0.8s ease-out; /* Smooth fade transition for opacity */
+}
+
+/* Navigation Bar Styling */
+nav {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out items in navigation */
+    align-items: center; /* Center items vertically */
+    background-color: #333; /* Background color for the nav */
+    padding: 10px 20px; /* Padding inside the nav */
+    position: relative; /* Relative positioning for layering */
+    z-index: 10; /* Ensure nav stays on top of content */
+}
+
+/* Flexbox Layout for Navigation Links */
+nav .nav-links {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center links horizontally */
+    font-size: 1.3em; /* Increase font size */
+    flex-grow: 1; /* Allow links to grow/shrink equally */
+}
+
+/* Individual Navigation Links */
+nav .nav-links li {
+    margin-left: 20px; /* Space between links */
+    position: relative; /* Relative positioning for dropdowns */
+}
+
+/* Link Styling */
+nav .nav-links li a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Padding inside links */
+    display: inline-block; /* Block-level link for padding */
+    transition: background-color 0.2s ease; /* Smooth background transition on hover */
+}
+
+/* Hover Effect for Links */
+nav .nav-links li a:hover {
+    background-color: #444; /* Darker background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Specific Interaction for the "Future Plans" Button with Pulse Effect */
+nav .future-plans {
+    position: relative; /* Position for pulse effect */
+    overflow: hidden; /* Hide overflow of pulse */
+    z-index: 2; /* Ensure pulse effect is visible */
+}
+
+/* Pulse Effect on Hover */
+nav .future-plans:hover::after {
+    content: ''; /* Empty content for pseudo-element */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%; /* Large size for pulse effect */
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2); /* Transparent white */
+    border-radius: 50%; /* Circular shape */
+    transform: translate(-50%, -50%); /* Center the pulse */
+    animation: pulse 1.7s ease-out; /* Animate the pulse */
+}
+.logo img {
+    width: 250px; /* Adjust the size of the logo */
+    height: 80px;
+}
+.logo-img:hover{
+    transform: scale(1.4);
+}
+
+/* Keyframes for Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.1); /* Start small */
+        background: rgba(155, 255, 105, 1); /* Start with a greenish color */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* End at full size */
+        opacity: 1; /* Full opacity at the end */
+    }
+}
+
+/* Dropdown Menu for "My Works" */
+.dropdown {
+    position: relative; /* Positioning for dropdown */
+    z-index: 15; /* Ensure dropdown stays on top */
+}
+
+.dropdown .dropbtn {
+    background-color: #333; /* Match nav background */
+    border: none; /* No border on button */
+}
+
+/* Dropdown Hover Effect */
+.dropdown:hover .dropbtn {
+    background-color: #555; /* Darker background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Dropdown Content Styling */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position relative to button */
+    background-color: burlywood; /* Light brown background */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0px 8px 16px 0px rgba(90, 250, 120, 0.4); /* Drop shadow */
+    z-index: 20; /* Ensure content stays on top */
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    color: black; /* Black text color */
+    padding: 12px 16px; /* Padding inside links */
+    text-decoration: inherit; /* Inherit text decoration */
+    display: block; /* Block-level links */
+}
+
+/* Dropdown Hover Effect for Links */
+.dropdown-content a:hover {
+    background-color: #777; /* Darker background on hover */
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-content {
+    display: block; /* Display the dropdown */
+    z-index: 20; /* Ensure it stays above other content */
+}
+
+/* Interactive Button for "Contact" with Underline Effect */
+nav .nav-links li:last-child a {
+    position: relative; /* Position for underline effect */
+}
+
+nav .nav-links li:last-child a::after {
+    content: ''; /* Empty content for pseudo-element */
+    position: absolute;
+    width: 0%; /* Start with no underline */
+    height: 2px; /* Thin underline */
+    bottom: -5px; /* Position below the text */
+    left: 0;
+    background-color: greenyellow; /* Greenish-yellow underline */
+    transition: width 1s ease; /* Smooth width transition */
+}
+
+/* Hover Effect to Expand Underline */
+nav .nav-links li:last-child a:hover::after {
+    width: 100%; /* Full-width underline on hover */
+}
+
+/* Hamburger Menu Toggle for Mobile */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Vertical layout */
+    justify-content: space-between; /* Evenly spaced lines */
+    width: 30px; /* Width of the toggle */
+    height: 21px; /* Height of the toggle */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.menu-toggle span {
+    display: block; /* Block-level span */
+    width: 100%; /* Full width */
+    height: 3px; /* Height of each line */
+    background: white; /* White lines */
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to bottom, rosybrown, dimgrey); /* Gradient background */
+    color: #fff; /* White text */
+    height: 450px; /* Fixed height */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8); /* Inset shadow for depth */
+}
+
+header h1 {
+    font-size: 3.5em; /* Large font size for header */
+    text-align: center; /* Center the text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Text shadow for emphasis */
+}
+
+/* Values Section Styling */
+.values-section {
+    text-align: center; /* Center the content */
+    padding: 50px 20px; /* Padding inside the section */
+    z-index: 1; /* Ensure section is above others */
+    color: black; /* Text color */
+    border-radius: 10px; /* Rounded corners */
+    margin: 30px auto; /* Center the section */
+    width: 90%; /* Width relative to parent */
+    max-width: 1400px; /* Maximum width */
+    background-color: rgba(0,0,0,0.5) ;
+}
+
+/* Subtitle Styling for Values Section */
+.values-subtitle {
+    font-size: 2.5em; /* Large font size */
+    margin-bottom: 20px; /* Space below subtitle */
+    color: #fff; /* White text color */
+}
+
+/* Flexbox Layout for Value Cards */
+.values-container {
+    display: flex; /* Flexbox layout */
+    justify-content: space-evenly; /* Even spacing between items */
+    align-items: flex-start; /* Align items at the top */
+    flex-wrap: wrap; /* Wrap items to next line if needed */
+}
+
+/* Individual Value Card Styling */
+.value-card {
+    background: linear-gradient(to bottom, grey, peachpuff); /* Gradient background */
+    width: 28%; /* Width relative to parent */
+    padding: 20px; /* Padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+    margin: 15px; /* Margin around cards */
+    text-align: center; /* Center the text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover Effect for Value Cards */
+.value-card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Increase shadow on hover */
+}
+
+/* Heading Styling in Value Cards */
+.value-card h3 {
+    font-size: 2.5em; /* Large font size */
+    margin-bottom: 10px; /* Space below heading */
+    color: black; /* Text color */
+}
+
+/* Paragraph Styling in Value Cards */
+.value-card p {
+    font-size: 1.5em; /* Font size */
+    color: black; /* Text color */
+}
+
+/* Results Section Styling */
+.results-section {
+    text-align: center; /* Center the content */
+    padding: 50px 20px; /* Padding inside the section */
+    color: #fff; /* White text color */
+    margin: 30px auto; /* Center the section */
+    width: 90%; /* Width relative to parent */
+    max-width: 1500px; /* Maximum width */
+    border-radius: 10px; /* Rounded corners */
+    background-color: rgba(0,0,0,0.5) ;
+}
+
+/* Section Title Styling */
+.section-title {
+    font-size: 3em; /* Large font size */
+    margin-bottom: 20px; /* Space below the title */
+    color: white; /* White text color */
+}
+
+/* Subtitle Styling in Results Section */
+.results-subtitle {
+    font-size: 2.5em; /* Large font size */
+    margin-bottom: 20px; /* Space below the subtitle */
+    color: wheat; /* Wheat text color */
+}
+
+/* Flexbox Layout for Result Cards */
+.results-container {
+    display: flex; /* Flexbox layout */
+    justify-content: space-evenly; /* Even spacing between items */
+    align-items: flex-start; /* Align items at the top */
+    flex-wrap: wrap; /* Wrap items to next line if needed */
+    margin-bottom: 20px; /* Space below the container */
+}
+
+/* Individual Result Card Styling */
+.result-card {
+    background: linear-gradient(to bottom, grey, peachpuff); /* Gradient background */
+    text-align: center; /* Center the text */
+    width: 30%; /* Width relative to parent */
+    margin: 15px; /* Margin around cards */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 0 10px rgba(102, 252, 241, 0.5); /* Box shadow for depth */
+}
+
+/* Hover Effect for Result Cards */
+.result-card:hover {
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.8); /* Increase shadow on hover */
+    transform: translateY(-5px); /* Lift the card on hover */
+}
+
+/* Heading Styling in Result Cards */
+.result-card h3 {
+    font-size: 2.5em; /* Large font size */
+    margin-bottom: 10px; /* Space below heading */
+    color: #66fcf1; /* Light blue text color */
+}
+
+/* Paragraph Styling in Result Cards */
+.result-card p {
+    font-size: 1.5em; /* Font size */
+    color: black; /* Text color */
+}
+
+/* Footer Styling for Results Section */
+.results-footer {
+    font-size: 2em; /* Large font size */
+    color: white; /* White text color */
+    margin-top: 15px; /* Space above footer */
+}
+
+/* Content Box Styles */
+.content-box {
+    padding: 30px; /* Padding inside the content box */
+    margin: 60px 50px; /* Margin around the content box */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 2.8em; /* Large font size */
+    color: #008bb9; /* Text color */
+    text-align: left; /* Left-align the text */
+    height: 500px; /* Fixed height */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    box-sizing: border-box; /* Include padding in total size */
+}
+
+/* Video Styling Inside Content Box */
+.content-box video {
+    height: 90%; /* Set the height to 90% of the container */
+    width: auto; /* Adjust the width automatically to maintain aspect ratio */
+    max-width: 90%; /* Ensure the video doesn't overflow the container width */
+    max-height: 90%; /* Ensure the video doesn't overflow the container height */
+    border-radius: 20px; /* Add slight rounding to the video edges */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add subtle shadow to the video */
+    margin-left: 200px; /* Margin on the left for positioning */
+}
+
+/* Paragraph Styling Inside Content Box */
+.content-box p {
+    font-size: 0.7em; /* Small font size */
+    line-height: 1.6em; /* Improved readability */
+    margin-bottom: 20px; /* Space below paragraph */
+    color: white; /* White text color */
+}
+
+/* General Heading Styles */
+.content-box h2 {
+    font-size: 2em; /* Large font size */
+    color: #008bb9; /* Ensure the text color is visible against the background */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Space below heading */
+    opacity: 1; /* Ensure full visibility */
+}
+
+/* Section-Specific Heading Styles */
+.section-title1 h2 {
+    color: white; /* Set the text color to white */
+    font-size: 2em; /* Ensure the font size is large enough */
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Add some margin to give space */
+    opacity: 1; /* Make sure it's fully visible */
+    visibility: visible; /* Ensure it's not hidden */
+    z-index: 1; /* Ensure it is above other elements */
+    position: relative; /* Ensure it respects the z-index */
+}
+
+/* Awards Section Title Styling */
+#awards h2 {
+    color: white; /* Consistent color for the awards section */
+    font-size: 2em; /* Font size for the awards title */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Space below the title */
+
+}
+
+/* Ensure Headings are Not Hidden by Default */
+.content-box h2,
+.section-title1 h2,
+#awards h2 {
+    opacity: 1; /* Ensure full visibility */
+    visibility: visible; /* Ensure they are not hidden */
+}
+
+/* List Styling for Awards */
+.content-box ul {
+    list-style-type: disc; /* Bullet points for list */
+    padding-left: 40px; /* Indent for list items */
+    text-align: left; /* Align list items to the left */
+    text-decoration: none;
+    margin-top: -300px; /* Adjusted margin */
+    margin-left: 100px; /* Adjusted margin */
+}
+
+/* Individual List Item Styling */
+.content-box ul li {
+    font-size: 0.8em; /* Small font size */
+    margin-bottom: 10px; /* Space between list items */
+    color: black; /* Text color for list items */
+}
+
+/* Hover Effect for List Items */
+.content-box ul li:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Link Styling Inside List Items */
+.content-box ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: saddlebrown; /* Brownish color for links */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #222; /* Dark background color */
+    color: #fff; /* White text color */
+    padding: 40px 0; /* Padding inside the footer */
+    font-size: 16px; /* Base font size for footer */
+    margin-top: 50px; /* Space above the footer */
+    position: relative; /* Relative positioning for footer content */
+    width: 100%; /* Full width footer */
+    clear: both; /* Clear floats */
+}
+
+/* Flexbox Layout for Footer */
+.footer-container {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space out columns */
+    align-items: flex-start; /* Align items at the top */
+    max-width: 1200px; /* Maximum width of footer content */
+    margin: 0 auto; /* Center the footer content */
+    padding: 0 20px; /* Padding inside the footer */
+    gap: 40px; /* Add spacing between the columns */
+}
+
+/* Footer Column Styling */
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1; /* Allow columns to grow/shrink equally */
+    padding: 20px; /* Padding inside each column */
+}
+
+/* Footer Heading Styling */
+.footer-left h3,
+.footer-center h3,
+.footer-right h3 {
+    font-size: 20px; /* Font size for footer headings */
+    margin-bottom: 20px; /* Space below headings */
+    color: greenyellow; /* Greenish-yellow color for headings */
+    align-items: center; /* Center the text */
+}
+
+/* Paragraph Styling in Footer */
+.footer-left p,
+.footer-right p {
+    margin-bottom: 15px; /* Space below paragraphs */
+    line-height: 1.6; /* Line height for readability */
+    color: #b5b5b5; /* Light gray text color */
+}
+
+/* Social Media Icons Styling */
+.social-icons {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    display: flex; /* Flexbox layout for icons */
+    gap: 15px; /* Space between icons */
+}
+
+/* Individual Social Media Icon Styling */
+.social-icons li {
+    display: inline-block; /* Inline-block for icons */
+}
+
+/* Link Styling for Social Media Icons */
+.social-icons a {
+    color: #fff; /* White icon color */
+    font-size: 18px; /* Font size for icons */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition on hover */
+}
+
+/* Hover Effect for Social Media Icons */
+.social-icons a:hover {
+    color: #00aced; /* Light blue color on hover */
+}
+
+/* Newsletter Form Styling */
+.newsletter-form {
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Vertical layout */
+    max-width: 300px; /* Limit the width of the form */
+}
+
+/* Email Input Styling in Newsletter Form */
+.newsletter-form input[type="email"] {
+    padding: 10px; /* Padding inside the input */
+    margin-bottom: 10px; /* Space below input */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+}
+
+/* Submit Button Styling in Newsletter Form */
+.newsletter-form button {
+    padding: 10px; /* Padding inside the button */
+    background-color: #00aced; /* Light blue background */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    color: #fff; /* White text color */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover Effect for Submit Button */
+.newsletter-form button:hover {
+    background-color: #008bb9; /* Darker blue background on hover */
+}
+
+/* Footer Bottom Section Styling */
+.footer-bottom {
+    text-align: center; /* Center the text */
+    padding: 20px 0; /* Padding inside the bottom section */
+    background-color: #111; /* Darker background for bottom section */
+    color: #b5b5b5; /* Light gray text color */
+    font-size: 14px; /* Smaller font size */
+    margin-top: 20px; /* Space above the bottom section */
+    width: 100%; /* Full width */
+    position: absolute; /* Position at the bottom */
+    bottom: 0; /* Align to the bottom of the page */
+    left: 0; /* Align to the left of the page */
+}
+
+/* Footer Bottom Paragraph Styling */
+.footer-bottom p {
+    margin: 0; /* Reset default margin */
+}
+
+/* Flip Card Styles */
+.flip-card {
+    background-color: transparent; /* Transparent background */
+    width: 300px; /* Fixed width */
+    height: 400px; /* Fixed height */
+    perspective: 1000px; /* Perspective for 3D effect */
+    margin: 0; /* Remove margin */
+    flex: 1; /* Allow cards to grow/shrink equally */
+    padding-left: 80px; /* Padding inside the card */
+}
+
+/* Flip Card Inner Container */
+.flip-card-inner {
+    position: relative; /* Relative positioning */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    text-align: center; /* Center the text */
+    transition: transform 0.6s; /* Smooth rotation transition */
+    transform-style: preserve-3d; /* Ensure 3D effect is maintained */
+}
+
+/* Hover Effect for Flip Cards */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); /* Rotate the card on hover */
+}
+
+/* Front and Back Sides of Flip Cards */
+.flip-card-front, .flip-card-back {
+    position: absolute; /* Absolute positioning */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    backface-visibility: hidden; /* Hide the back side when not flipped */
+    border-radius: 10px; /* Rounded corners */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Front Side of Flip Cards */
+.flip-card-front {
+    background: linear-gradient(to bottom, grey, peachpuff); /* Gradient background */
+    color: white; /* White text color */
+    font-size: 1.1em; /* Font size */
+}
+
+/* Back Side of Flip Cards */
+.flip-card-back {
+    background-color: gray; /* Gray background color */
+    color: #333; /* Dark text color */
+    transform: rotateY(180deg); /* Rotate the back side */
+    padding: 20px; /* Padding inside the back side */
+    font-size: 0.9em; /* Smaller font size */
+    box-sizing: border-box; /* Include padding in total size */
+}
+
+/* Section Title Styling */
+.section-title h2 {
+    color: white; /* White text color */
+    font-size: 2em; /* Font size */
+}
+
+/* Adjust the "Plans" Section for a Row Layout */
+.about-section {
+    display: flex; /* Flexbox layout */
+    justify-content: space-around; /* Space cards evenly */
+    align-items: center; /* Center items vertically */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    margin: 0 auto; /* Center the section */
+    max-width: 1600px; /* Maximum width */
+}
+
+/* Specific Title Styling in the "Plans" Section */
+.section-title1 {
+    text-align: center; /* Center the text */
+    font-size: 1.2em; /* Smaller font size */
+    margin-bottom: 40px; /* Space below the title */
+    color: #008bb9; /* Blue text color */
+}
+
+/* Media Queries for Mobile Screens */
+@media (max-width: 768px) {
+    /* Adjust Header for Mobile */
+    header {
+        height: 300px; /* Reduce height for mobile screens */
+    }
+
+    header h1 {
+        font-size: 2em; /* Further reduce font size */
+    }
+
+    /* Adjust Values and Results Sections for Mobile */
+    .values-section,
+    .results-section {
+        padding: 30px 10px; /* Reduce padding */
+        width: 95%; /* Adjust width for better fit */
+    }
+
+    /* Make Cards Full Width on Small Screens */
+    .value-card,
+    .result-card {
+        width: 100%; /* Full width */
+        margin: 10px 0; /* Adjust margin for mobile */
+    }
+
+    /* Adjust Flip Cards for Mobile */
+    .about-section {
+        display: flex;
+        flex-direction: column; /* Arrange cards in a column */
+        align-items: center; /* Center the cards */
+        height: 1200px;
+    }
+
+    .flip-card {
+        width: 400px; /* Adjust width for mobile */
+        height: 100px; /* Adjust height for mobile */
+        margin: 10px 10px; /* Center the cards */
+        padding-left: 0; /* Remove padding */
+    }
+
+    .flip-card-back {
+        font-size: 1.3em; /* Adjust font size for mobile */
+    }
+
+    .flip-card-front h3 {
+        font-size: 1.8em;
+    }
+
+    /* Adjust Content Box for Mobile */
+    .content-box {
+        padding: 20px;
+        margin: 30px auto;
+        width: 90%;
+        font-size: 1.4em; /* Reduce font size for better readability */
+        height: auto; /* Allow height to adjust based on content */
+        flex-direction: column; /* Adjust layout */
+    }
+
+    .content-box video {
+        margin-left: 0;
+    }
+
+    /* Paragraph Styling in Content Box for Mobile */
+    .content-box p {
+        font-size: 0.9em;
+    }
+
+    /* List Styling in Content Box for Mobile */
+    .content-box ul {
+        margin-top: 30px;
+        font-size: 1.5em;
+        margin-left: 10px;
+    }
+
+    /* Adjust Footer Layout for Mobile */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Reduce the gap between sections */
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    /* Center Social Icons on Mobile */
+    .social-icons {
+        justify-content: center; /* Center the icons horizontally */
+    }
+
+    /* Adjust Newsletter Form for Mobile */
+    .newsletter-form {
+        width: 100%; /* Full width */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        width: 80%; /* Make input and button the same width */
+        max-width: 300px; /* Limit the max-width */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    /* Footer Bottom Section for Mobile */
+    .footer-bottom {
+        position: relative; /* Allow footer to flow with content */
+        text-align: center;
+        padding: 20px 0;
+        width: 100%;
+        top: 40px;
+        left: -20px;
+    }
+
+    /* Navigation Menu Toggle for Mobile */
+    nav .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+        background-color: #333; /* Dark background */
+        position: absolute; /* Absolute positioning */
+        top: 85px; /* Position below the toggle */
+        left: 0; /* Align to left */
+    }
+
+    nav .nav-links.nav-open {
+        display: flex;
+    }
+
+    nav .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin-left: -40px;
+        margin-bottom: -15px; /* Add a small gap between items */
+    }
+
+    nav .nav-links li a {
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+/* Media Queries for Tablet Screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Adjust Navigation Menu for Tablets */
+    nav {
+        padding: 15px;
+    }
+
+    nav .nav-links {
+        flex-direction: row; /* Keep horizontal on tablets */
+        justify-content: center;
+    }
+
+    nav .nav-links li {
+        margin: 10px;
+    }
+
+    nav .nav-links li a {
+        padding: 12px;
+        font-size: 16px; /* Slightly increase font size */
+    }
+
+    /* Adjust Header for Tablets */
+    header {
+        height: 350px; /* Adjust height for tablets */
+    }
+
+    header h1 {
+        font-size: 2.5em; /* Adjust font size for tablets */
+    }
+
+    /* Adjust Values and Results Sections for Tablets */
+    .values-section,
+    .results-section {
+        padding: 40px 20px; /* Increase padding */
+        width: 90%; /* Slightly increase width */
+    }
+
+    .value-card,
+    .result-card {
+        width: 45%; /* Two cards per row on tablets */
+        margin: 15px auto; /* Center the cards */
+    }
+
+    /* Adjust Flip Cards for Tablets */
+    .about-section {
+        display: flex;
+        flex-direction: column; /* Arrange cards in a column */
+        align-items: center; /* Center the cards */
+        height: 1200px;
+    }
+
+    .flip-card {
+        width: 400px; /* Adjust width for tablets */
+        height: 100px; /* Adjust height for tablets */
+        margin: 10px 10px; /* Center the cards */
+        padding-left: 0; /* Remove padding */
+    }
+
+    .flip-card-back {
+        font-size: 1.3em; /* Adjust font size for tablets */
+    }
+
+    .flip-card-front h3 {
+        font-size: 1.8em;
+    }
+
+    /* Adjust Content Box for Tablets */
+    .content-box {
+        padding: 20px;
+        margin: 30px auto;
+        width: 90%;
+        font-size: 1.4em; /* Reduce font size for better readability */
+        height: auto; /* Allow height to adjust based on content */
+        flex-direction: column; /* Adjust layout */
+    }
+
+    .content-box video {
+        margin-left: 0;
+    }
+
+    /* Paragraph Styling in Content Box for Tablets */
+    .content-box p {
+        font-size: 1em; /* Slightly larger font for better readability */
+    }
+
+    /* List Styling in Content Box for Tablets */
+    .content-box ul {
+        font-size: 1.5em;
+        margin-top: 50px;
+        margin-left: 10px;
+    }
+
+    /* Footer Adjustments for Tablets */
+    footer {
+        font-size: 1.2em; /* Adjust font size */
+        padding: 25px;
+    }
+}
+
+/* Keyframes for Sliding in from the Left */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0; /* Start fully transparent */
+    }
+    100% {
+        transform: translateX(0); /* End in place */
+        opacity: 1; /* End fully visible */
+    }
+}
+
+/* Keyframes for Sliding in from the Right */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+        opacity: 0; /* Start fully transparent */
+    }
+    100% {
+        transform: translateX(0); /* End in place */
+        opacity: 1; /* End fully visible */
+    }
+}
+
+/* Initially Hide Elements for Animation */
+.content-box h2,
+.content-box video {
+    opacity: 0; /* Start fully transparent */
+}
+
+/* Class to Trigger Animations from Left */
+.animate-left {
+    animation: slideInFromLeft 1s ease-out forwards; /* Slide in from left */
+}
+
+/* Class to Trigger Animations from Right */
+.animate-right {
+    animation: slideInFromRight 1s ease-out forwards; /* Slide in from right */
+}
+
+/* Keyframes for Spinning Animation with Scaling */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) scale(0.5); /* Rotate and scale down */
+    }
+    100% {
+        transform: rotate(360deg) scale(0.5); /* Rotate and maintain scale */
+    }
+}
+
+/* Class to Trigger Spinning and Scaling Animation */
+.spin {
+    animation: spin 1s linear infinite; /* Continuous spinning */
+    transform: scale(0.5); /* Initial scaling */
+}
+
+/* Stop the Spinning Animation and Return to Original Size */
+.stop-spin {
+    animation: none; /* Stop animation */
+    transform: rotate(0deg) scale(1); /* Reset to original size */
+}
+
+/* Section Title Styling in the "Plans" Section */
+.section-title1 h2 {
+    font-size: 1.2em; /* Smaller font size for the "Plans" section */
+    color: #008bb9; /* Blue text color */
+}
+
+/* Awards Section Title Styling */
+#awards h2 {
+    font-size: 1.2em; /* Smaller font size for the "Awards" title */
+    margin-top: -350px; /* Adjusted margin */
+    color: white; /* White text color */
+}
+
+/* Media Query for Awards Section Title on Mobile Screens */
+@media (max-width: 768px) {
+    #awards h2 {
+        font-size: 2.2em; /* Adjust font size for mobile */
+        margin-top: -50px; /* Reset margin for mobile */
+    }
+}
+
+/* Media Query for Awards Section Title on Tablet Screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #awards h2 {
+        font-size: 2.2em; /* Adjust font size for mobile */
+        margin-top: -50px; /* Reset margin for mobile */
+    }
+}

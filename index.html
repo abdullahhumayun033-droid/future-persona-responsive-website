@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Character encoding set to UTF-8 for proper text rendering -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on mobile devices -->
+    <title>Future Persona | Abdullah Humayun</title> <!-- Title of the webpage -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- FontAwesome CSS for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script> <!-- Include Handlebars.js for templating -->
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav>
+    <!-- Logo Section -->
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/logobg.png" alt="Logo" class="logo-img">
+        </a>
+    </div>
+    <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <!-- Navigation links for different sections/pages of the website -->
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li> <!-- Link to the Home page -->
+        <li><a href="about.html">About Me</a></li> <!-- Link to the About Me page -->
+        <li><a href="future-plans.html" class="future-plans">Vision & Milestones</a></li> <!-- Link to the Vision & Milestones page -->
+        <li class="dropdown">
+            <a href="my-works.html" class="dropbtn">Signature Designs</a> <!-- Link to Signature Designs page with a dropdown menu -->
+            <div class="dropdown-content">
+                <!-- Links to specific projects within the Signature Designs page -->
+                <a href="my-works.html#work2">Underwater</a>
+                <a href="my-works.html#work3">Farm Towers</a>
+                <a href="my-works.html#work4">Architectural Showcase</a>
+            </div>
+        </li>
+        <li><a href="team.html">Team & Press</a></li> <!-- Link to the Team & Press page -->
+        <li><a href="contact.html">Contact</a></li> <!-- Link to the Contact page -->
+        <li><a href="report.html">Report</a></li> <!-- Link to the Report page -->
+    </ul>
+</nav>
+
+<!-- Background Container Section -->
+<div class="background-container">
+    <div class="content">
+        <!-- Content can be added here later if needed -->
+    </div>
+</div>
+
+<!-- Profile Section -->
+<section class="profile-section">
+    <div class="profile-container">
+        <div class="profile-image" id="profileImage">
+            <!-- Front image in the profile section -->
+            <div class="image-front">
+                <img src="images/image-front.jpeg" alt="Front Image">
+            </div>
+            <!-- Back image in the profile section -->
+            <div class="image-back">
+                <img src="images/image-back.png" alt="Back Image">
+            </div>
+        </div>
+        <!-- Text content in the profile section -->
+        <div class="profile-text">
+            <h2>I am Syed Abdullah Humayun</h2> <!-- Name or title -->
+            <p>Computer Scientist and a realtor.</p> <!-- Short description -->
+            <blockquote>
+                "The only way to achieve the impossible is to believe it is possible." <!-- Inspirational quote -->
+            </blockquote>
+            <p><a href="about.html" class="blog-link">→ BLOG</a></p> <!-- Link to the blog page -->
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<div class="gallery">
+    <!-- Single Gallery Item with a Slideshow -->
+    <div class="gallery-item slideshow-container">
+        <!-- Slide 1 -->
+        <div class="mySlides fade">
+            <img src="images/cs%20ab.webp" alt="Image 1">
+            <div class="hover-text">
+                <h2>Turing Award 2031</h2> <!-- Title of the award or achievement -->
+                <p>Annual award given by the Association for Computing Machinery (ACM).</p> <!-- Description of the award -->
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="mySlides fade">
+            <img src="images/dealing%20ab.webp" alt="Image 2">
+            <div class="hover-text">
+                <h2>Certified Property Manager (CPM)</h2> <!-- Title of the certification -->
+                <p>Institute of Real Estate Management (IREM).</p> <!-- Description of the certification -->
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="mySlides fade">
+            <img src="images/office%20ab.webp" alt="Image 3">
+            <div class="hover-text">
+                <h2>Our company has been awarded as the Second Fastest Growing Construction Company.</h2> <!-- Title of the achievement -->
+                <p>(Below 9000 Cr Category), 3rd year in a row at 19th Construction World Global Awards 2029 held on 22nd October, 2029.</p> <!-- Description of the award -->
+            </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="mySlides fade">
+            <img src="images/changin%20color.webp" alt="Image 4">
+            <div class="hover-text">
+                <h2>In 2032, SAH paint won an award.</h2> <!-- Title of the award -->
+                <p>SAH Paint was awarded the 2032 Country Garden Group Excellent Supplier Award.</p> <!-- Description of the award -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Content Cards for All Images -->
+    <div class="gallery-item full-view" style="display: none;">
+        <img src="images/cs%20ab.webp" alt="Image 1">
+        <div class="hover-text">
+            <h2>Turing Award 2031</h2> <!-- Title of the award or achievement -->
+            <p>Annual award given by the Association for Computing Machinery (ACM).</p> <!-- Description of the award -->
+        </div>
+    </div>
+    <div class="gallery-item full-view" style="display: none;">
+        <img src="images/dealing%20ab.webp" alt="Image 2">
+        <div class="hover-text">
+            <h2>Certified Property Manager (CPM)</h2> <!-- Title of the certification -->
+            <p>Institute of Real Estate Management (IREM).</p> <!-- Description of the certification -->
+        </div>
+    </div>
+    <div class="gallery-item full-view" style="display: none;">
+        <img src="images/office%20ab.webp" alt="Image 3">
+        <div class="hover-text">
+            <h2>Our company has been awarded as the Second Fastest Growing Construction Company.</h2> <!-- Title of the achievement -->
+            <p>(Below 9000 Cr Category), 3rd year in a row at 19th Construction World Global Awards 2029 held on 22nd October, 2029.</p> <!-- Description of the award -->
+        </div>
+    </div>
+    <div class="gallery-item full-view" style="display: none;">
+        <img src="images/changin%20color.webp" alt="Image 4">
+        <div class="hover-text">
+            <h2>In 2032, SAH paint won an award.</h2> <!-- Title of the award -->
+            <p>SAH Paint was awarded the 2032 Country Garden Group Excellent Supplier Award.</p> <!-- Description of the award -->
+        </div>
+    </div>
+</div>
+
+<!-- Hero Section with Text Slideshow -->
+<div class="text-slideshow">
+    <!-- Slide 1 -->
+    <div class="slide">"Completed my BSCS in 2026 from University of London and currently handling my business"</div>
+    <!-- Slide 2 -->
+    <div class="slide">"Passionate about technology and real estate"</div>
+    <!-- Slide 3 -->
+    <div class="slide">"Always striving for excellence in every endeavor"</div>
+</div>
+
+<!-- News Section -->
+<section class="news-section">
+    <div class="container">
+        <!-- Left section for displaying news links -->
+        <div class="left-section">
+            <h1 class="section-title">Latest News</h1> <!-- Title for the news section -->
+            <ul class="news-links" id="news-links">
+                <!-- Handlebars will populate this section -->
+            </ul>
+        </div>
+        <!-- Right section for displaying news content -->
+        <div class="right-section" id="news-content">
+            <!-- Handlebars will populate this section -->
+        </div>
+    </div>
+</section>
+
+<!-- Handlebars Templates -->
+<script id="news-links-template" type="text/x-handlebars-template">
+    {{#each news}}
+        <li><a href="#{{this.id}}" class="news-link">{{this.title}}</a></li>
+    {{/each}}
+</script>
+
+<script id="news-content-template" type="text/x-handlebars-template">
+    {{#each news}}
+        <div class="news-item" id="{{this.id}}">
+            <h2>{{this.title}}</h2>
+            <p>{{this.description}}</p>
+        </div>
+    {{/each}}
+</script>
+
+<!-- Subscription Section -->
+<section class="subscribe-section">
+    <h2>STAY TUNED</h2> <!-- Title for the subscription section -->
+    <p>Subscribe my newsletter and don’t miss any update on new products, promotions or even career events.</p> <!-- Description of the subscription purpose -->
+    <form id="subscribe-form">
+        <!-- Checkbox for privacy policy acceptance -->
+        <div class="checkbox-container">
+            <input type="checkbox" id="privacy-policy" required>
+            <label for="privacy-policy">I read and accept the <a href="#" target="_blank">privacy policy</a>.</label>
+        </div>
+        <!-- Input field for email subscription -->
+        <div class="input-container">
+            <input type="email" placeholder="yourname@email.com" required>
+        </div>
+        <button type="submit" class="subscribe-button">SUBSCRIBE TO NEWSLETTER</button> <!-- Subscription button -->
+    </form>
+</section>
+
+<!-- Brand Logos Section -->
+<section class="brand-section">
+    <h2>I WORK WITH BRANDS I <span>BELIEVE IN</span></h2> <!-- Title for the brand logos section -->
+    <div class="brand-grid">
+        <!-- Brand 1 -->
+        <div class="brand-item">
+            <img src="images/brand%20-1.png" alt="Brand 1"> <!-- Brand logo -->
+        </div>
+        <!-- Brand 2 -->
+        <div class="brand-item">
+            <img src="images/brand%202.png" alt="Brand 2"> <!-- Brand logo -->
+        </div>
+        <!-- Brand 3 -->
+        <div class="brand-item">
+            <img src="images/brand%203.jpeg" alt="Brand 3"> <!-- Brand logo -->
+        </div>
+        <!-- Brand 4 -->
+        <div class="brand-item">
+            <img src="images/brand%20-4.png" alt="Brand 4"> <!-- Brand logo -->
+        </div>
+        <!-- Brand 5 -->
+        <div class="brand-item">
+            <img src="images/brand%205.jpg" alt="Brand 5"> <!-- Brand logo -->
+        </div>
+        <!-- Add more logos as needed -->
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <!-- About Me section in the footer -->
+        <div class="footer-left">
+            <h3>About Me</h3> <!-- Title for the About Me section -->
+            <p>
+                I'm a passionate web developer and designer, crafting beautiful and functional websites. Connect with me on social media or reach out through the contact form.
+            </p>
+            <!-- Social media links -->
+            <ul class="social-icons">
+                <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+        <!-- Newsletter subscription section in the footer -->
+        <div class="footer-center">
+            <h3>Subscribe to Newsletter</h3> <!-- Title for the Newsletter subscription -->
+            <form class="newsletter-form" action="#" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" required> <!-- Input field for email subscription -->
+                <button type="submit">Subscribe</button> <!-- Subscribe button -->
+            </form>
+        </div>
+        <!-- Contact information section in the footer -->
+        <div class="footer-right">
+            <h3>Contact</h3> <!-- Title for the Contact section -->
+            <p>
+                <strong>Address:</strong><br>
+                87-H Phase 5 DHA Lahore <!-- Address details -->
+            </p>
+            <p>
+                <strong>Email:</strong><br>
+                <a href="mailto:example@example.com">example@example.com</a> <!-- Email link -->
+            </p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2034 SAH. All rights reserved.</p> <!-- Copyright information -->
+    </div>
+</footer>
+<!-- Link to external JavaScript file -->
+<script src="scripts.js"></script>
+</body>
+</html>
